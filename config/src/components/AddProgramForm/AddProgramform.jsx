@@ -263,7 +263,7 @@ const uploadForm = async () => {
 
 
                 {
-                    mapDates.map((dates) =>
+                    mapDates?.map((dates) =>
 
                         <div className=' col-12  d-flex justify-content-center mb-3 p-1 rounded-md' key={dates.key}>
                             <p className=' flex  bg-darkGreen text-white hover:bg-darkGreen cursor-auto  justify-content-center col-11' style={{ width: '200px' }}> {dates.date[0]}   {dates.date[1]}  {dates.date[2]}  {dates.date[3]} <div className='flex justify-content-end col-1'> <IoIosRemoveCircle className="mt-1 ml-1 cursor-pointer " /></div></p>

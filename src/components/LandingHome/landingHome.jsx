@@ -39,7 +39,7 @@ function LandingHome() {
   return (
     <div  >
       {is_loggedIn ? <>
-        {usersAcc.loading ? <div className='loading  '>
+        {usersAcc?.loading ? <div className='loading  '>
           <div class="loader">
             <div class="loader-wheel"></div>
             <div class="loader-text"></div>
@@ -57,7 +57,7 @@ function LandingHome() {
                 <h1 className='m-2'>Top {cate}</h1>
                 <div className=" flex scrollEffect" style={{ width: '100%' }}>
                   {
-                    usersAcc?.users?.data.map(obj => {
+                    usersAcc?.users?.data?.map(obj => {
                       return <>
                         {obj?.domain == `${cate}` ?
                           <div>

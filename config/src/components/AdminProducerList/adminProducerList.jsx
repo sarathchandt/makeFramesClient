@@ -62,7 +62,7 @@ function adminProducerList() {
                         </thead>
 
                         <tbody>
-                            {tableDetails.map(element => {
+                            {tableDetails?.map(element => {
                                 return <>
                                     <tr >
                                         <td className="text-start text-white ml-3 border border-slate-600" >{element.firstName}</td>
