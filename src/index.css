@@ -3,7 +3,7 @@
 @tailwind utilities;
 @font-face {
   font-family: inter;
-  src: url(../public//font/Inter-VariableFont_slnt\,wght.ttf);
+  src: url(//font/Inter-VariableFont_slnt\,wght.ttf);
 }
 
 body {
