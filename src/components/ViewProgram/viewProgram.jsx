@@ -56,7 +56,7 @@ console.log(programs.programs?.data);
                     return <div className=" col-lg-3 col-md-4  col-6 mt-3">
                       <div className=' bg-dark1 m-1 rounded relative ' style={{ width: '100%', height: "100%" }}  >
                         
-                        <img src={obj.imageArray?.length==0?'../../public/images/image-asset.jpeg':obj.imageArray[0]} alt="" className='object-cover pt-3 pe-3 ps-3' style={{ aspectRatio: '1 / 1' }} />
+                        <img src={obj.imageArray?.length==0?'/images/image-asset.jpeg':obj.imageArray[0]} alt="" className='object-cover pt-3 pe-3 ps-3' style={{ aspectRatio: '1 / 1' }} />
                         <p className='d-flex justify-content-center text-light text-uppercase text-break font-extrabold m-1 p-3' style={{height:'50px',fontSize:'75%'}} >{obj.name}</p>
                         <p className='d-flex justify-content-center cursor-pointer btn bg-darkGreen text-white1 m-3 hover:bg-red 'onClick={()=>{gotoProgram (obj._id,obj?.bookingCount,obj?.name )}}  >View booking  </p>
                         <p className='d-flex justify-content-center cursor-pointer btn bg-darkGreen text-white1 m-3 hover:bg-red ' >Edit</p>

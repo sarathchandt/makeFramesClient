@@ -212,10 +212,10 @@ function viewOneBook() {
         <div>
             <Toaster/>
             {book.loading? <div>
-                <video src="../../../public/videos/loading-dot.mp4" />
+                <video src="/videos/loading-dot.mp4" />
             </div>: <>
             {
-                fetchedPg.loading && viewport.latitude && viewport.longitude ? <><video src="../../../public/videos/loading-dot.mp4" autoPlay loop /></> : viewport.latitude && viewport.longitude && (
+                fetchedPg.loading && viewport.latitude && viewport.longitude ? <><video src="/videos/loading-dot.mp4" autoPlay loop /></> : viewport.latitude && viewport.longitude && (
                     <>
 
                         <div className="container-fluid mt-5">
@@ -254,7 +254,7 @@ function viewOneBook() {
                                                 Files
                                                 <div className="  p-3 m-1 cursor-pointer rounded flex scrollEffect">
                                                     <video src={fetchedPg.program.data.vdoFile} className='rounded-lg object-cover' style={{ width: '100%',height:'100px'}} ></video>
-                                                    {fetchedPg.loading ? <><video src="../../../public/videos/loading-dot.mp4" loop autoPlay /></> : fetchedPg.program.data?.imageArray.map(obj => {
+                                                    {fetchedPg.loading ? <><video src="/videos/loading-dot.mp4" loop autoPlay /></> : fetchedPg.program.data?.imageArray.map(obj => {
                                                         return <>
                                                             <img src={obj} alt="img" className='rounded-lg  object-cover m-1' style={{ width:'100%' ,height:'100px'}} />
                                                         </>

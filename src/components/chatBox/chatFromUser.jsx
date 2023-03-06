@@ -110,7 +110,7 @@ function chatFromUser() {
                         <a href="#" class="list-group-item list-group-item-action border-0 mt-2" onClick={() => { setupPerson(obj) }}>
                           <div class="badge bg-success float-right">5</div>
                           <div class="d-flex align-items-start">
-                            <img src={obj?.dpimage ? obj?.dpimage : "../../public/images/146-1468295_business-man-profile-icon-business-profile-icon-png.png"} class="rounded-circle mr-1" alt="Vanessa Tucker" width="40" height="40" />
+                            <img src={obj?.dpimage ? obj?.dpimage : "/images/146-1468295_business-man-profile-icon-business-profile-icon-png.png"} class="rounded-circle mr-1" alt="Vanessa Tucker" width="40" height="40" />
                             <div class="flex-grow-1 ml-3">
                               {obj?.firstName}
                               <div class="small"><span class="fas fa-circle chat-online"></span> Online</div>
@@ -137,7 +137,7 @@ function chatFromUser() {
                   <div class="py-2 px-4 border-bottom d-none d-lg-block">
                     <div class="d-flex align-items-center py-1">
                       <div class="position-relative">
-                        <img src={person?.dpimage ? person?.dpimage : "../../public/images/146-1468295_business-man-profile-icon-business-profile-icon-png.png"} class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40" />
+                        <img src={person?.dpimage ? person?.dpimage : "/images/146-1468295_business-man-profile-icon-business-profile-icon-png.png"} class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40" />
                       </div>
                       <div class="flex-grow-1 pl-3">
                         <strong>{person?.firstName}</strong>
@@ -160,7 +160,7 @@ function chatFromUser() {
                             {obj.myself ? <></> :
                               <div class="chat-message-left pb-4 text-dark " >
                                 <div>
-                                  <img src={person?.dpimage ? person?.dpimage : "../../public/images/146-1468295_business-man-profile-icon-business-profile-icon-png.png"} class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40" />
+                                  <img src={person?.dpimage ? person?.dpimage : "/images/146-1468295_business-man-profile-icon-business-profile-icon-png.png"} class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40" />
                                   <div class="text-muted small text-nowrap mt-2">{obj?.hr}:{obj?.min}</div>
                                 </div>
                                 <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3" ref={messageRef}>
@@ -172,7 +172,7 @@ function chatFromUser() {
                             {obj.myself ?
                               <div class="chat-message-right mb-4 text-darkGreen" >
                                 <div>
-                                  <img src="../../public/images/146-1468295_business-man-profile-icon-business-profile-icon-png.png" class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40" />
+                                  <img src="/images/146-1468295_business-man-profile-icon-business-profile-icon-png.png" class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40" />
                                   <div class="text-muted small text-nowrap mt-2">{obj?.hr}:{obj?.min}</div>
                                 </div>
                                 <div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3" ref={messageRef}>

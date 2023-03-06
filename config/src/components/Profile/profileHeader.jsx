@@ -30,7 +30,7 @@ function profileHeader() {
             <div className="container mt-10"  >
                 <div className="row">
                 <div className='col-md-3' >
-                        <img src="../../../public/images/146-1468295_business-man-profile-icon-business-profile-icon-png.png" className='rounded-full' alt="" />
+                        <img src="/images/146-1468295_business-man-profile-icon-business-profile-icon-png.png" className='rounded-full' alt="" />
             
                 </div>
                 <div className='col-md-9' ></div>

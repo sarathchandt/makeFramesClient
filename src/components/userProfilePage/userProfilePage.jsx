@@ -75,7 +75,7 @@ function userProfilePage() {
                                         <div class="stats absolute bg-red rounded  p-1" style={{ right: '-12px' }}>
                                             <h6 class="mb-0 text-xs">{user?.userDetails?.data?.hype.length} Hypes</h6>
                                         </div>
-                                        <img src={user?.userDetails?.data?.dpimage ? user?.userDetails?.data?.dpimage : '../../public/images/146-1468295_business-man-profile-icon-business-profile-icon-png.png '} className='rounded-circle object-cover' alt="" style={{ width: '120px', aspectRatio: '1/1' }} />
+                                        <img src={user?.userDetails?.data?.dpimage ? user?.userDetails?.data?.dpimage : '/images/146-1468295_business-man-profile-icon-business-profile-icon-png.png '} className='rounded-circle object-cover' alt="" style={{ width: '120px', aspectRatio: '1/1' }} />
                                     </div>
                                 </div>
                                 <div class="mt-5 text-center">
