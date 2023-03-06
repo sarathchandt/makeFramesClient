@@ -60,7 +60,6 @@ function Header() {
       }
     })
   }
-  console.log(is_artist,"kkk");
   useEffect(() => {
     const token = document.cookie
     axios.post(`${UURL}loginCheck`, { token: token }).then(response => {
@@ -99,6 +98,7 @@ function Header() {
           <p className='pl-8 text-sm cursor hover:text-red' onClick={() => {
             navigate("/")
           }}>About</p>
+
           {/* <p className='pl-8 text-sm cursor hover:text-red'>Approach Producers</p> */}
 
           {
@@ -109,6 +109,9 @@ function Header() {
               navigate("/login")
             }}>Login</p>
           }
+            <p className='pl-8 text-sm cursor hover:text-red' onClick={() => {
+            navigate("/admin")
+          }}>Admin console</p>
         </div>
         <div className={profilebar ? 'profile active p bg-green' : 'profile bg-green'}>
 
@@ -195,10 +198,10 @@ function Header() {
                 setNavbar(false)
               }} >Home  </div>
             </div>
-            <div className='row cursor text-darkGreen hover:text-white hover:bg-red p-2'>
+            {/* <div className='row cursor text-darkGreen hover:text-white hover:bg-red p-2'>
               <div className='d-flex  justify-content-end col-3 mt-1'> <FaMoneyBillAlt style={{ fontSize: '20px' }} />  </div>
               <div className='d-flex  justify-content-start col-9 '>To Producer</div>
-            </div>
+            </div> */}
             <div className='row cursor text-darkGreen hover:text-white hover:bg-red p-2'>
               <div className='d-flex  justify-content-end col-3 mt-1'> <BsFillInfoCircleFill style={{ fontSize: '20px' }} />  </div>
               <div className='d-flex  justify-content-start col-9 '>About</div>
@@ -214,6 +217,12 @@ function Header() {
                 setNavbar(false)
               }}>Login </div>}
 
+            </div>
+            <div className='row cursor text-darkGreen hover:text-white hover:bg-red p-2'onClick={() => {
+            navigate("/admin")
+          }} >
+              <div className='d-flex  justify-content-end col-3 mt-1'> <BsFillInfoCircleFill style={{ fontSize: '20px' }} />  </div>
+              <div className='d-flex  justify-content-start col-9 '>Admin Console</div>
             </div>
 
           </div>
