@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { fetchOneProgram } from '../../../slices/fetchProgramForBook.mjs'
 import Map, { GeolocateControl, Marker } from "react-map-gl";
-import "/mapbox-gl/dist/mapbox-gl.css";
+import "mapbox-gl/dist/mapbox-gl.css";
 import toast,{ Toaster } from 'react-hot-toast'
 
 import {bookedFunction} from '../../../slices/bookProgram.mjs'
