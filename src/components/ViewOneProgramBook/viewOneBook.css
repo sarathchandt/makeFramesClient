@@ -1,0 +1,48 @@
+.scroll-object{
+    
+    height: 40vh;
+    overflow:hidden;
+    overflow-y: scroll;
+}
+.scroll-object::-webkit-scrollbar {
+    width: 12px;
+
+}
+.scroll-object::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+.scroll-object::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #3C6255;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+.scrollEffect{
+    width: 30%;
+    overflow:hidden;
+    overflow-x: scroll;
+}
+
+.scrollEffect::-webkit-scrollbar {
+    
+    height: 5px;
+   
+
+}
+.scrollEffect::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 5px;
+    color: black;
+}
+.scrollEffect::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #1eda9b;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    color: black;
+}
+
+.colored-toast.swal2-icon-warning {
+    background-color: #3C6255 !important;
+    color: aliceblue;
+  }

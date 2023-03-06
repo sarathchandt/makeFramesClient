@@ -1,0 +1,35 @@
+body{
+    }
+.footer{
+    height: 400px;
+    width: 100%;
+}
+.foot{
+    margin-top: 25%;
+}
+.line{
+    margin-top: 10%;
+    height: 300px;
+    width: 2px;
+    background-color: aliceblue;
+}
+.banner {
+   
+    width: 100%;
+    height: 400px;
+    background-image: url("../../../public/images/odessa-ukraine-august-fragment-theatrical-production-historical-drama-corsican-fate-napoleon-bonaparte-st-helena-157213285.jpg");
+    
+}
+.book{
+    position: absolute;
+    right: 140px;
+    bottom: 200px;
+    width: 250px;
+    height: 30px;
+
+}
+
+.blur{
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  }
