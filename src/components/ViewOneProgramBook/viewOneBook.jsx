@@ -13,10 +13,10 @@ import {unBook} from '../../../slices/bookProgram.mjs'
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import { MdDescription } from '@react-icons/all-files/md/MdDescription'
-import { FaUserAlt } from '@react-icons/all-files/fa/FaUserAlt'
-import { MdVideoLabel } from '@react-icons/all-files/Md/MdVideoLabel'
-import { HiCurrencyRupee } from '@react-icons/all-files/hi/HiCurrencyRupee'
+// import { MdDescription } from '@react-icons/all-files/md/MdDescription'
+// import { FaUserAlt } from '@react-icons/all-files/fa/FaUserAlt'
+// import { MdVideoLabel } from '@react-icons/all-files/Md/MdVideoLabel'
+// import { HiCurrencyRupee } from '@react-icons/all-files/hi/HiCurrencyRupee'
 import './viewOneBook.css'
 import axios from 'axios';
 import { UURL } from '../../../API/apiCall.js';
@@ -231,13 +231,13 @@ function viewOneBook() {
 
                                             </div>
                                             <div className="col-1 d-flex justify-content-end mb-3">
-                                                <MdDescription className='mt-1 text-green' />
+                                                {/* <MdDescription className='mt-1 text-green' /> */}
                                             </div>
                                             <div className=" scroll-object col-11 mb-3" style={{ height: '90px' }}>
                                                 <p>{fetchedPg.program.data.description}</p>
                                                 </div>
                                             <div className="col-1 d-flex justify-content-end ">
-                                                <FaUserAlt className='mt-1 text-green' />
+                                                {/* <FaUserAlt className='mt-1 text-green' /> */}
                                             </div>
                                             <div className="  col-5 " >
                                                 <p>{fetchedPg?.program?.data?.user?.firstName} {fetchedPg?.program?.data?.user?.lastName}</p>
@@ -248,7 +248,7 @@ function viewOneBook() {
 
                                             </div>
                                             <div className="col-1 d-flex justify-content-end">
-                                                <MdVideoLabel className='mt-1 text-green' />
+                                                {/* <MdVideoLabel className='mt-1 text-green' /> */}
                                             </div>
                                             <div className="col-11">
                                                 Files
@@ -264,7 +264,7 @@ function viewOneBook() {
                                                
                                             </div>
                                             <div className="col-12 mt-3 text-red mb-4 flex justify-content-end">
-                                            <b className='flex'><HiCurrencyRupee className='text-green text-lg mt-1 me-2'  />{fetchedPg.program.data.amount.toLocaleString()}</b>/- Per program
+                                            {/* <b className='flex'><HiCurrencyRupee className='text-green text-lg mt-1 me-2'  />{fetchedPg.program.data.amount.toLocaleString()}</b>/- Per program */}
                                             </div>
                                         </div>
                                     </div>
