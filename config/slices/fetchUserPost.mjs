@@ -10,7 +10,9 @@ const initialState={
 }
 
 export const  fetchPostsOfUser = createAsyncThunk('post/fetchPostsOfUser',async(id)=>{
-    return await axios.post(`${UURL}fetchPostsOfUser`,{id:id},{withCredentials:true})
+    let token=document.cookie
+    const headers = { Authorization: `usertoken ${token}` };
+    return await axios.post(`${UURL}fetchPostsOfUser`,{id:id},{headers})
 })
 
 

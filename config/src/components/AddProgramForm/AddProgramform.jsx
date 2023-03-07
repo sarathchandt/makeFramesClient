@@ -39,7 +39,10 @@ function  AddProgramform() {
     const navigate = useNavigate();
 
     useEffect(()=>{
-        axios.get(`${UURL}takeDescription`,{withCredentials:true}).then(res=>{
+        let token = document.cookie
+        const headers = { Authorization: `usertoken ${token}` };
+
+        axios.get(`${UURL}takeDescription`,{headers}).then(res=>{
             console.log(res);
             setRules(res.data[0])
         })

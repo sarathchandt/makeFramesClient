@@ -26,7 +26,10 @@ function SingleProgram() {
 
   function rejected(id) {
     setBlur(true)
-    axios.post(`${UURL}rejectProgram`, { id: id }, { withCredentials: true }).then(result => {
+    let token = document.cookie
+    const headers = { Authorization: `usertoken ${token}` };
+
+    axios.post(`${UURL}rejectProgram`, { id: id }, { headers }).then(result => {
       location.reload();
 
     })
@@ -34,7 +37,9 @@ function SingleProgram() {
 
   function accepted(id) {
     setBlur(true)
-    axios.post(`${UURL}acceptProgram`, { id: id }, { withCredentials: true }).then(result => {
+    let token = document.cookie
+    const headers = { Authorization: `usertoken ${token}` };
+    axios.post(`${UURL}acceptProgram`, { id: id }, { headers }).then(result => {
       location.reload();
     })
   }
@@ -42,7 +47,9 @@ function SingleProgram() {
 
   useEffect(() => {
     setLoading(true)
-    axios.post(`${UURL}checkBookingHost`, { id: searchParams.get('id') }, { withCredentials: true }).then(result => {
+    let token = document.cookie
+    const headers = { Authorization: `usertoken ${token}` };
+    axios.post(`${UURL}checkBookingHost`, { id: searchParams.get('id') }, { headers }).then(result => {
       setPrograms(result.data)
 
     })

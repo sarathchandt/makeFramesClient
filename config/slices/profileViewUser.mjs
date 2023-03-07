@@ -9,7 +9,10 @@ const initialState ={
 }
 
 export const fetchUserData=createAsyncThunk('user/fetchUserData',async(id)=>{
-    return await axios.post(`${UURL}fetchUserData`,{id:id},{withCredentials:true})
+    let token = document.cookie
+    const headers = { Authorization: `usertoken ${token}` };
+
+    return await axios.post(`${UURL}fetchUserData`,{id:id},{headers})
 })
 
 const fetchUserDataSlice= createSlice({

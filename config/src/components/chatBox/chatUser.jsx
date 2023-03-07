@@ -67,8 +67,10 @@ function chatUser() {
       messages: inputMessage,
       from: self._id
     });
+    let token = document.cookie
+    const headers = { Authorization: `usertoken ${token}` };
 
-    axios.post(`${UURL}message`, { from: self._id, to: person._id, message: inputMessage }, { withCredentials: true });
+    axios.post(`${UURL}message`, { from: self._id, to: person._id, message: inputMessage }, { headers });
     setChatNow(chatNow.concat(messages))
     setInputMessage('')
 
@@ -77,8 +79,11 @@ function chatUser() {
   useEffect(() => {
     if (unique) {
       setUnique(false)
-      axios.post(`${UURL}tekeMessagePeople`, { toId: searchParams.get('userId') }, { withCredentials: true }).then(res => {
-        axios.post(`${UURL}takeUsersForChat`, { people: res.data.MessagedPeople }, { withCredentials: true }).then(res => {
+      let token = document.cookie
+    const headers = { Authorization: `usertoken ${token}` };
+
+      axios.post(`${UURL}tekeMessagePeople`, { toId: searchParams.get('userId') }, { headers }).then(res => {
+        axios.post(`${UURL}takeUsersForChat`, { people: res.data.MessagedPeople }, { headers }).then(res => {
           setPeople(res?.data)
         })
         setSelf(res?.data);

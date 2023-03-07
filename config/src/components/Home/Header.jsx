@@ -60,7 +60,6 @@ function Header() {
       }
     })
   }
-  console.log(is_artist,"kkk");
   useEffect(() => {
     const token = document.cookie
     axios.post(`${UURL}loginCheck`, { token: token }).then(response => {
@@ -69,14 +68,13 @@ function Header() {
       setFirstname(response.data?.firstName)
       setLastname(response.data?.lastName)
     })
+    const headers = { Authorization: `usertoken ${token}` };
 
-    axios.get(`${UURL}getDomain`,{withCredentials:true}).then(res=>{
-      console.log(res);
+    axios.get(`${UURL}getDomain`,{headers}).then(res=>{
       setCategory(res.data)
     })
     axios.post(`${UURL}checkArtist`, { token: token }).then((response) => {
       dispatch(changeState(response.data.isArtist))
-      console.log(response);
       
     })
   },[])

@@ -24,14 +24,17 @@ function chatFromUser() {
       }, [inputMessage])
     
     useEffect(() => {
-        socket.current = io.connect("http://localhost:3033")
+        socket.current = io.connect("https://makeframes.herewego.shop")
         if (self?._id) {
           socket.current.emit("addUser", self._id);
         }
       }, [self._id])
 
     useEffect(()=>{
-        axios.get(`${UURL}takePeopleForMessage`,{withCredentials:true}).then(res=>{
+      let token=document.cookie
+      const headers = { Authorization: `usertoken ${token}` };
+
+        axios.get(`${UURL}takePeopleForMessage`,{headers}).then(res=>{
             console.log(res);
             setChatUsers(res?.data?.messageArray)
             setSelf(res.data.self)
@@ -42,7 +45,6 @@ function chatFromUser() {
         if (socket.current) {
           socket.current.on("receive", (data) => {
            axios.get(`${UURL}bringDp`, { withCredentials: true }).then(res=>{
-                console.log(res.data._id, "ll", data.from);
                 if (res.data._id != data.from) {
                   setSocketMessages({ myself: false, message: data.messages });
                 }
@@ -71,8 +73,10 @@ function chatFromUser() {
           messages: inputMessage,
           from: self._id
         });
-    
-        axios.post(`${UURL}message`, { from: self._id, to: person._id, message: inputMessage }, { withCredentials: true });
+        let token = document.cookie
+        const headers = { Authorization: `usertoken ${token}` };
+
+        axios.post(`${UURL}message`, { from: self._id, to: person._id, message: inputMessage }, { headers });
         setChatNow(chatNow.concat(messages))
         setInputMessage('')
     
