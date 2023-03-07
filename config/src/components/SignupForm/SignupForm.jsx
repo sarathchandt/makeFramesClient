@@ -229,7 +229,6 @@ function SignupForm() {
 
 
   const sentOtp = () => {
-    console.log("llllllllllll");
     axios.post(`${UURL}otp`, { email: email }).then((response) => {
       console.log(response.data);
     })
@@ -243,6 +242,7 @@ function SignupForm() {
       if (!result.data.is && result.data.serverOtp) {
         navigate("/")      
         document.cookie = `${result.data.token}`
+        localStorage.setItem('usertoken', `${result.data.token}`);
       
       } else {
         navigate('/signup');

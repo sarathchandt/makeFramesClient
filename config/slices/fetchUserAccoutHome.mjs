@@ -11,7 +11,8 @@ const initialState = {
 
 
 export const fetchUserDetails = createAsyncThunk('user/fetchUserDetails',async()=>{
-    let token = document.cookie
+    let token  = localStorage.getItem('usertoken');
+
     const headers = { Authorization: `usertoken ${token}` };
     return await axios.get(`${UURL}fetchUsers`,{headers})
 })

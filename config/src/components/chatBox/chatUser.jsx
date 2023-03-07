@@ -67,7 +67,7 @@ function chatUser() {
       messages: inputMessage,
       from: self._id
     });
-    let token = document.cookie
+    let token  = localStorage.getItem('usertoken');
     const headers = { Authorization: `usertoken ${token}` };
 
     axios.post(`${UURL}message`, { from: self._id, to: person._id, message: inputMessage }, { headers });
@@ -79,8 +79,8 @@ function chatUser() {
   useEffect(() => {
     if (unique) {
       setUnique(false)
-      let token = document.cookie
-    const headers = { Authorization: `usertoken ${token}` };
+      let token  = localStorage.getItem('usertoken');
+      const headers = { Authorization: `usertoken ${token}` };
 
       axios.post(`${UURL}tekeMessagePeople`, { toId: searchParams.get('userId') }, { headers }).then(res => {
         axios.post(`${UURL}takeUsersForChat`, { people: res.data.MessagedPeople }, { headers }).then(res => {

@@ -31,7 +31,7 @@ function chatFromUser() {
       }, [self._id])
 
     useEffect(()=>{
-      let token=document.cookie
+      let token  = localStorage.getItem('usertoken');
       const headers = { Authorization: `usertoken ${token}` };
 
         axios.get(`${UURL}takePeopleForMessage`,{headers}).then(res=>{
@@ -73,7 +73,7 @@ function chatFromUser() {
           messages: inputMessage,
           from: self._id
         });
-        let token = document.cookie
+        let token  = localStorage.getItem('usertoken');
         const headers = { Authorization: `usertoken ${token}` };
 
         axios.post(`${UURL}message`, { from: self._id, to: person._id, message: inputMessage }, { headers });
