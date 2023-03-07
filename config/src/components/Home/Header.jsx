@@ -78,6 +78,10 @@ function Header() {
       
     })
   },[])
+
+  function logoutNow(){
+    localStorage.removeItem('usertoken');
+  }
   
   console.log(category);
 
@@ -132,7 +136,7 @@ function Header() {
             </div>
             <div className='row cursor text-darkGreen hover:text-white hover:bg-red p-2'>
               <div className='d-flex  justify-content-end col-3 mt-1'> <FiLogIn style={{ fontSize: '20px' }} />  </div>
-              <div className='d-flex  justify-content-start col-9 '>Logout </div>
+              <div className='d-flex  justify-content-start col-9 'onClick={()=>{logoutNow()}}>Logout </div>
             </div>
           </div>
         </div>

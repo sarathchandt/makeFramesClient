@@ -10,7 +10,7 @@ function privateRoutes() {
 
 
     useEffect(() => {
-        const token = document.cookie
+        const token = localStorage.getItem('usertoken')
              axios.post(`${UURL}loginCheck`, { token: token }).then((response) => {
                 setIsLogin(response.data.user)
             })
