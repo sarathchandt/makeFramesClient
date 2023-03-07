@@ -31,7 +31,10 @@ function chatFromUser() {
       }, [self._id])
 
     useEffect(()=>{
-        axios.get(`${UURL}takePeopleForMessage`,{withCredentials:true}).then(res=>{
+      const token = localStorage.getItem('usertoken');
+    const headers = { Authorization: `usertoken ${token}` };
+
+        axios.get(`${UURL}takePeopleForMessage`,{headers}).then(res=>{
             console.log(res);
             setChatUsers(res?.data?.messageArray)
             setSelf(res.data.self)

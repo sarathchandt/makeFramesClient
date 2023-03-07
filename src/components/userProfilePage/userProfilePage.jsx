@@ -21,9 +21,12 @@ function userProfilePage() {
     const user = useSelector(state => state.fetchUserData)
     const post = useSelector(state => state.fetchPostsOfUser)
     useEffect(() => {
+        const token = localStorage.getItem('usertoken');
+    const headers = { Authorization: `usertoken ${token}` };
+
         dispatch(fetchUserData(searchParams.get('profile_id')))
         dispatch(fetchPostsOfUser(searchParams.get('profile_id')))
-        axios.post(`${UURL}takeHypeStatus`, { userId: searchParams.get('profile_id') },{withCredentials:true}).then(res=>{
+        axios.post(`${UURL}takeHypeStatus`, { userId: searchParams.get('profile_id') },{headers}).then(res=>{
                 setHype(res.data.hype)
                 console.log(res,"hhh");
 
@@ -31,9 +34,12 @@ function userProfilePage() {
     }, [])
 
     function hypeHim() {
-        axios.post(`${UURL}hypeHim`, { userId: searchParams.get('profile_id') }, { withCredentials: true }).then(() => {
+        const token = localStorage.getItem('usertoken');
+    const headers = { Authorization: `usertoken ${token}` };
+
+        axios.post(`${UURL}hypeHim`, { userId: searchParams.get('profile_id') }, { headers }).then(() => {
             dispatch(fetchUserData(searchParams.get('profile_id')))
-            axios.post(`${UURL}takeHypeStatus`, { userId: searchParams.get('profile_id') },{withCredentials:true}).then(res=>{
+            axios.post(`${UURL}takeHypeStatus`, { userId: searchParams.get('profile_id') },{headers}).then(res=>{
                 console.log(res,"hhh");
                 setHype(res.data.hype)
                 
@@ -41,9 +47,12 @@ function userProfilePage() {
         })
     }
     function unHypeHim(){
-        axios.post(`${UURL}unHypeHim`, { userId: searchParams.get('profile_id') }, { withCredentials: true }).then(() => {
+        const token = localStorage.getItem('usertoken');
+    const headers = { Authorization: `usertoken ${token}` };
+
+        axios.post(`${UURL}unHypeHim`, { userId: searchParams.get('profile_id') }, { headers}).then(() => {
             dispatch(fetchUserData(searchParams.get('profile_id')))
-            axios.post(`${UURL}takeHypeStatus`, { userId: searchParams.get('profile_id') },{withCredentials:true}).then(res=>{
+            axios.post(`${UURL}takeHypeStatus`, { userId: searchParams.get('profile_id') },{headers}).then(res=>{
                 setHype(res.data.hype)
                 
         })

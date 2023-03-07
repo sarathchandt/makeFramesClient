@@ -10,7 +10,10 @@ const initialState={
 }
 
 export const  fetchPostsOfUser = createAsyncThunk('post/fetchPostsOfUser',async(id)=>{
-    return await axios.post(`${UURL}fetchPostsOfUser`,{id:id},{withCredentials:true})
+    const token = localStorage.getItem('usertoken');
+    const headers = { Authorization: `usertoken ${token}` };
+
+    return await axios.post(`${UURL}fetchPostsOfUser`,{id:id},{headers})
 })
 
 
