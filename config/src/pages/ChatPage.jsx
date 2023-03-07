@@ -5,7 +5,6 @@ import ChatBox from '../components/chatBox/chatUser'
 function chatPage() {
   return (
     <div><Header/>
-    
           <ChatBox/>
      </div>
   )

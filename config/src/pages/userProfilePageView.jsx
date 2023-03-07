@@ -7,7 +7,6 @@ function userProfilePageView() {
   return (
     <div>
         <Header/>
-
         <UserProfile/>
         <Footer/>
     </div>
