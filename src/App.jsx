@@ -11,7 +11,7 @@ import ViewPrograms from './pages/Viewprograms.jsx';
 import ViewSingleProgram from './pages/ViewSingleProgram';
 import ViewStageProgramUser from "./pages/ViewStageProgramUser";
 import ViewProgramDetails from './pages/ViewProgramDetails';
-import ViewBookedProgram from './pages/ViewUserBooked';
+// import ViewBookedProgram from './pages/ViewUserBooked';
 import ViewHostBooking from './pages/ViewHostBooking';
 import ViewMap from './pages/ViewMap'
 import UserPageForProfile from './pages/UserProfilePageView'
