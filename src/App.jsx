@@ -17,6 +17,7 @@ import ViewMap from './pages/ViewMap'
 import UserPageForProfile from './pages/userProfilePageView'
 import ChatUserBox from './pages/ChatPage'
 import AdminPrivateRoutes from './pages/AdminPrivateRoutes'
+import SearchPeopleByDomain from './pages/SearchPeopleByDomain'
 
 // admn
 
@@ -50,6 +51,7 @@ function App() {
             <Route element={<UserPageForProfile />} path={'/UserPageForProfile'} />
             <Route element={<ChatUserBox />} path='/ChatUserBox' />
             <Route element={<ChatFromUser/>} path = '/chatFromUsers'/>
+            <Route element={<SearchPeopleByDomain/>} path= '/searchPeopleByDomain'/>
           </Route>
 
 

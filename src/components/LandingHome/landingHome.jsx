@@ -7,11 +7,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchUserDetails } from '../../../slices/fetchUserAccoutHome.mjs'
 function LandingHome() {
 
-  const [category, setCategory] = useState(['DIRECTOR','ACTOR','ACTRESS','MUSICIAN'])
+  const [category, setCategory] = useState(['DIRECTOR', 'ACTOR', 'ACTRESS', 'MUSICIAN'])
   const dispatch = useDispatch()
   const usersAcc = useSelector(state => state.userFetch)
   let is_loggedIn = useSelector(state => state.loggedInUser.loggedIn);
-  const [cate,setCate]=useState([])
+  const [cate, setCate] = useState([])
 
   const navigate = useNavigate()
 
@@ -21,7 +21,7 @@ function LandingHome() {
     const headers = { Authorization: `Bearer ${token}` };
 
     axios.get(`${UURL}getDomain`, { headers }).then(res => {
-      setCate( res.data)
+      setCate(res.data)
 
     })
     localStorage.getItem('usertoken') ?
@@ -36,13 +36,21 @@ function LandingHome() {
       }).toString()
     })
   }
+function searchPeopleByDomain(name){
+  navigate({
+    pathname: '/searchPeopleByDomain',
+    search: createSearchParams({
+      domain:name
+    }).toString()
+  })
 
+}
 
 
   return (
     <div  >
       {is_loggedIn ? <>
-        {usersAcc?.loading ? <> <div className='h-96 bg-black w-fill'></div> <div className='loading  '>
+        {usersAcc?.loading ? <> <div className=' bg-black w-fill' style={{ height: '700px' }}></div> <div className='loading  '>
           <div class="loader">
             <div class="loader-wheel"></div>
             <div class="loader-text"></div>
@@ -82,6 +90,18 @@ function LandingHome() {
                 </div>
               </>
             })}
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-12 mt-5 mb-2">Search People By Domain</div>
+                {cate?.map(obj => {
+                  return <div className="col-md-4 p-2 d-flex justify-content-center  " onClick={()=>{
+                     searchPeopleByDomain(obj?.name)
+                  }}>
+                    <button className='btn bg-green hover:bg-green text-white ' style={{ width: '70%' }} > {obj?.name}</button>
+                  </div>
+                })}
+              </div>
+            </div>
           </div>
         }
       </> : <>
@@ -130,7 +150,10 @@ function LandingHome() {
 
 
       </>}
+
     </div>
+
+
 
 
 

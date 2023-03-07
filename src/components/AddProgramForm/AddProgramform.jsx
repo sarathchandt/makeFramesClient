@@ -35,6 +35,7 @@ function  AddProgramform() {
     const [throttleClick, setThrottleClick] = useState(false);
     const [loading, setLoding]=useState(false)
     const [ rules, setRules]= useState([])
+    const [cate,setCate] = useState([])
 
     const navigate = useNavigate();
 
@@ -127,6 +128,15 @@ const uploadForm = async () => {
         
 
     }
+
+    useEffect(()=>{
+        const token = localStorage.getItem('usertoken')
+        const headers = { Authorization: `Bearer ${token}` };
+        axios.get(`${UURL}getProgramDomain`,{headers}).then(res=>{
+          console.log(res);
+          setCate(res.data)
+        })
+    },[])
     
     useEffect(()=>{
         loading ? toast.loading('Uploading program...'): null 
@@ -206,10 +216,11 @@ const uploadForm = async () => {
                             <input type="text" className='  email w-max  border-darkGreen  border-4 rounded-lg bg-black mr-1 ' value={name} placeholder='Name Of The Program' onChange={(e) => { setName(e.target.value) }} />
                             <select name="" id="" className='email w-max  border-darkGreen mr-1  border-4 rounded-lg bg-black ' onClick={(e) => { setCategory(e.target.value) }}>
                                 <option value="" style={{ display: 'none' }} >Choose Category</option>
-                                <option value="Drama">Drama</option>
-                                <option value="Skit">Skit</option>
-                                <option value="Song">Song</option>
-                                <option value="Mimicry">Mimicry</option>
+                                {cate.map(e=>{
+                                return <>
+                                <option value={e?.name}>{e?.name}</option>
+                                </> })}
+                                
                             </select>
                             <input type="number" className='  email w-max  border-darkGreen  border-4 rounded-lg bg-black mr-1 ' placeholder='Amount Per Show' value={amount} onChange={(e) => { setAmount(e.target.value) }} />
                         </div>
@@ -240,10 +251,10 @@ const uploadForm = async () => {
                         <input type="text" className=' m-1  email w-fill  border-darkGreen  border-4 rounded-lg bg-black  ' placeholder='Name Of The Program' onChange={(e) => { setName(e.target.value) }} /> <br />
                         <select name="" id="" className='email m-1 w-fill  border-darkGreen mr-1  border-4 rounded-lg bg-black ' onClick={(e) => { setCategory(e.target.value) }}>
                             <option value="" style={{ display: 'none' }}>Choose Category</option>
-                            <option value="Drama">Drama</option>
-                            <option value="Skit">Skit</option>
-                            <option value="Song">Song</option>
-                            <option value="Mimicry">Mimicry</option>
+                            {cate.map(e=>{
+                                return <>
+                                <option value={e?.name}>{e?.name}</option>
+                                </> })}
                         </select> <br />
                         <input type="number" className='  email w-fill  border-darkGreen  border-4 rounded-lg bg-black  m-1 ' placeholder='Amount Per Show' value={amount} onChange={(e) => { setAmount(e.target.value) }} />
                         <input type="text" className='   email   border-darkGreen  border-4 rounded-lg bg-black w-fill m-1 ' placeholder='Description About Program' value={description} onChange={(e) => { setDescription(e.target.value) }} />

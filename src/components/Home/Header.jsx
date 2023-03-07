@@ -83,6 +83,10 @@ function Header() {
   },[])
   
   console.log(category);
+  function logout(){
+    localStorage.removeItem('usertoken');
+    navigate('/login')
+  }
 
   const navigate = useNavigate();
   return (
@@ -111,9 +115,7 @@ function Header() {
               navigate("/login")
             }}>Login</p>
           }
-            <p className='pl-8 text-sm cursor hover:text-red' onClick={() => {
-            navigate("/admin")
-          }}>Admin console</p>
+          
         </div>
         <div className={profilebar ? 'profile active p bg-green' : 'profile bg-green'}>
 
@@ -139,7 +141,7 @@ function Header() {
             </div>
             <div className='row cursor text-darkGreen hover:text-white hover:bg-red p-2'>
               <div className='d-flex  justify-content-end col-3 mt-1'> <FiLogIn style={{ fontSize: '20px' }} />  </div>
-              <div className='d-flex  justify-content-start col-9 '>Logout </div>
+              <div className='d-flex  justify-content-start col-9 ' onClick={()=>{logout()}}>Logout </div>
             </div>
           </div>
         </div>

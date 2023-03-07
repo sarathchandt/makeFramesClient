@@ -1,16 +1,16 @@
 import React from 'react'
 import Header from '../components/Home/Header'
-import UserProfilePage from '../components/UserProfilePage/userProfilePage'
+import PeopleDomain from '../components/SearchPeopleByDomain/searchPeopleByDomain'
 import Footer from '../components/Footer/Footer'
 
-function userProfilePageView() {
+function SearchPeopleByDomain() {
   return (
     <div>
         <Header/>
-        <UserProfilePage/>
+        <PeopleDomain/>
         <Footer/>
     </div>
   )
 }
 
-export default userProfilePageView
+export default SearchPeopleByDomain

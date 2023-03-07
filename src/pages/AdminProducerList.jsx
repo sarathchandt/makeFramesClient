@@ -1,6 +1,6 @@
 import React from 'react'
 import SideBar from '../components/AdminSideBar/adminSideBar'
-import AdminHeader from '../components/Home/adminHeader'
+import AdminHeader from '../components/Home/AdminHeader'
 import Producer from '../components/AdminProducerList/adminProducerList'
 
 function AdminProducerList() {

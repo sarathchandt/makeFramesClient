@@ -1,0 +1,25 @@
+.paginationBttn{
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.paginationBttn a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid rgb(93, 197, 93);
+    color: bisque;
+    cursor: pointer;
+}
+
+.paginationBttn a:hover {
+    color: black;
+    background-color: aliceblue;
+}
+.acivateBttn a {
+    color: rgb(0, 0, 0);
+    background-color: aliceblue;
+}

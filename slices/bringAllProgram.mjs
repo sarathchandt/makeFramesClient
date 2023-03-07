@@ -13,6 +13,11 @@ export const fetchAllProgramForBooking = createAsyncThunk('allPost/fetchAllProgr
     return await axios.post(`${UURL}bringAllpost`,{token:localStorage.getItem('usertoken')})
 })
 
+export const fetchSearchedPg=createAsyncThunk('allPost/fetchSearchedPg',async(cate)=>{
+ 
+    return await axios.post(`${UURL}bringSearchedPg`,{token:localStorage.getItem('usertoken'),category:cate})
+})
+
 const allPostSlice = createSlice({
     name:'allPost',
     initialState:initialState,
@@ -20,6 +25,17 @@ const allPostSlice = createSlice({
         builder.addCase(fetchAllProgramForBooking.fulfilled,(state, action)=>{
             state.loading=false;
             state.programs = action.payload;
+        })
+        builder.addCase(fetchSearchedPg.pending,(state)=>{
+            state.loading=true;
+            state.programs=[]
+        })
+        builder.addCase(fetchSearchedPg.fulfilled,(state, action)=>{
+            state.loading=false;
+            state.programs= action.payload
+        })
+        builder.addCase(fetchSearchedPg.rejected,(state)=>{
+            state.loading=false
         })
         builder.addCase(fetchAllProgramForBooking.rejected,(state, action)=>{
             state.loading=false;
