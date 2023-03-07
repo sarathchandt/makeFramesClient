@@ -47,7 +47,7 @@ function Header() {
 
   function RegistrationArtist(e) {
     e.preventDefault();
-    const token = document.cookie
+    const token = localStorage.getItem('usertoken')
     let data = {
       domain: domain,
       about: about,

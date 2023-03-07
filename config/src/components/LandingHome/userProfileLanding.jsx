@@ -112,7 +112,7 @@ function userProfileLanding() {
 
        
         dispatch(fetchPost(count))
-        const token = document.cookie;
+        const token = localStorage.getItem('usertoken');
         axios.post(`${UURL}bringDp`, { token: token }).then((result) => {
             setImg(result.data.dpimage)
             setProfileDetails(result.data)

@@ -37,7 +37,7 @@ function SingleProgram() {
 
   function accepted(id) {
     setBlur(true)
-    let token = document.cookie
+    let token = localStorage.getItem('usertoken')
     const headers = { Authorization: `usertoken ${token}` };
     axios.post(`${UURL}acceptProgram`, { id: id }, { headers }).then(result => {
       location.reload();
