@@ -45,7 +45,7 @@ function App() {
             <Route element={<ViewSingleProgram />} path='/viewSingleProgram' />
             <Route element={<ViewStageProgramUser />} path='/viewStageProgramUser' />
             <Route element={<ViewProgramDetails />} path='/viewProgramDetails' />
-            <Route element={<ViewBookedProgram />} path='/viewBookedProgram' />
+            {/* <Route element={<ViewBookedProgram />} path='/viewBookedProgram' /> */}
             <Route element={<ViewHostBooking />} path="/viewHostBook" />
             <Route element={<ViewMap />} path={'/viewMap'} />
             <Route element={<UserPageForProfile />} path={'/UserPageForProfile'} />
