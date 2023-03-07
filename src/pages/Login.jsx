@@ -16,7 +16,7 @@ function Login() {
 
 
     useEffect(()=>{
-        const token = document.cookie
+        const token = localStorage.getItem('usertoken')
         async function  datafetch  (){
              await axios.post(`${UURL}loginCheck`,{token:token}).then((response)=>{
                   setIsLogin(response.data.user)

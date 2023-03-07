@@ -241,7 +241,7 @@ function SignupForm() {
     axios.post(`${UURL}signup`, details).then(result => {
       if (!result.data.is && result.data.serverOtp) {
         navigate("/")      
-        document.cookie = `${result.data.token}`
+        // document.cookie = `${result.data.token}`
         localStorage.setItem('usertoken', `${result.data.token}`);
       
       } else {

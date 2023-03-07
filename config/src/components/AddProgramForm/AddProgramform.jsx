@@ -83,7 +83,7 @@ const uploadForm = async () => {
                     imageArray.push(res.data.secure_url)
 
                     let details = {
-                        token: document.cookie,
+                        token:localStorage.getItem('usertoken'),
                         selectedDaates: selectedDaates,
                         name: name,
                         category: category,

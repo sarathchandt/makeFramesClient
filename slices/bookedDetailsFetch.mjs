@@ -10,7 +10,7 @@ const initialState={
 }
 
 export const fetchBookedPG=createAsyncThunk('bookedPg/fetchBookedPG',async()=>{
-    return await axios.post(`${UURL}fetchBookedPg`,{token:document.cookie})
+    return await axios.post(`${UURL}fetchBookedPg`,{token:localStorage.getItem('usertoken')})
 })
 
 

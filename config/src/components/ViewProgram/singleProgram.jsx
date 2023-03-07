@@ -26,7 +26,7 @@ function SingleProgram() {
 
   function rejected(id) {
     setBlur(true)
-    let token = document.cookie
+    let token = localStorage.getItem('usertoken')
     const headers = { Authorization: `usertoken ${token}` };
 
     axios.post(`${UURL}rejectProgram`, { id: id }, { headers }).then(result => {
@@ -47,7 +47,7 @@ function SingleProgram() {
 
   useEffect(() => {
     setLoading(true)
-    let token = document.cookie
+    let token = localStorage.getItem('usertoken')
     const headers = { Authorization: `usertoken ${token}` };
     axios.post(`${UURL}checkBookingHost`, { id: searchParams.get('id') }, { headers }).then(result => {
       setPrograms(result.data)

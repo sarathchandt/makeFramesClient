@@ -11,7 +11,7 @@ const initialState = {
 
 
 export const fetchPrograms = createAsyncThunk('programs/fetchPrograms',async()=>{
-   return await axios.post(`${UURL}viewPrograms`,{ token: document.cookie })
+   return await axios.post(`${UURL}viewPrograms`,{ token: localStorage.getItem('usertoken') })
 })
 
 

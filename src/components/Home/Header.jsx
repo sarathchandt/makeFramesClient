@@ -47,7 +47,7 @@ function Header() {
 
   function RegistrationArtist(e) {
     e.preventDefault();
-    const token = document.cookie
+    const token = localStorage.getItem('usertoken')
     let data = {
       domain: domain,
       about: about,
@@ -61,14 +61,14 @@ function Header() {
     })
   }
   useEffect(() => {
-    const token1 = document.cookie
-    axios.post(`${UURL}loginCheck`, { token: token1 }).then(response => {
+    const token = localStorage.getItem('usertoken')
+    axios.post(`${UURL}loginCheck`, { token: token }).then(response => {
       setLogin(response.data.user)
       dispatch(changeLoginState(response.data.user))
       setFirstname(response.data?.firstName)
       setLastname(response.data?.lastName)
     })
-    const token = localStorage.getItem('usertoken');
+    
     const headers = { Authorization: `usertoken ${token}` };
 
     axios.get(`${UURL}getDomain`,{headers}).then(res=>{

@@ -24,7 +24,7 @@ function LandingHome() {
       setCate( res.data)
 
     })
-    document.cookie ?
+    localStorage.getItem('usertoken') ?
       dispatch(fetchUserDetails()) : null
   }, [])
   console.log(category);

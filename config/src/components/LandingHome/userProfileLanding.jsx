@@ -63,7 +63,7 @@ function userProfileLanding() {
                 let details = {
                     images: imageArray,
                     coments: coment,
-                    token: document.cookie
+                    token: localStorage.getItem('usertoken')
                 }
 
                 await axios.post(`${UURL}addPost`, details).then(res => {
@@ -146,7 +146,7 @@ function userProfileLanding() {
         data.append('file', dpimg)
         data.append("upload_preset", 'nefiqdoa')
         axios.post('https://api.cloudinary.com/v1_1/dyn6m4tou/image/upload', data).then(result => {
-            const token = document.cookie;
+            const token = localStorage.getItem('usertoken')
             axios.post(`${UURL}profilePic`, { image: result.data.secure_url, token: token }).then(() => {
                 setAddimage(false)
                 location.reload()

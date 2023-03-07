@@ -146,7 +146,7 @@ function viewOneBook() {
                     mob:mob,
                     mark:mark,
                     currentLocation:viewport,
-                    token:document.cookie,
+                    token:localStorage.getItem('usertoken'),
                     hostedUser:name?.data?._id
     
                 }
@@ -203,7 +203,7 @@ function viewOneBook() {
     
     useEffect(() => {
         dispatch(fetchOneProgram(searchParams.get('id')))
-        axios.post(`${UURL}loginCheck`, { token: document.cookie }).then(result => {
+        axios.post(`${UURL}loginCheck`, { token: localStorage.getItem('usertoken') }).then(result => {
             setName(result)
         })
 

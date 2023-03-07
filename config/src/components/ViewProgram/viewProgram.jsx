@@ -25,7 +25,7 @@ function viewProgram() {
 
   useEffect(() => {
     dispatch(fetchPrograms())
-    axios.post(`${UURL}viewPrograms`, { token: document.cookie }).then(res => {
+    axios.post(`${UURL}viewPrograms`, { token: localStorage.getItem('usertoken') }).then(res => {
       res.data.length == 0 ? Swal.fire({
         title: 'OOPS !',
         text: 'Please add Programs',

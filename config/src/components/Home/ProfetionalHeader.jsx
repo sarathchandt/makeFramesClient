@@ -42,7 +42,7 @@ function ProfetionalHeader() {
                 let details = {
                     images: imageArray,
                     coments: coment,
-                    token: document.cookie
+                    token: localStorage.getItem('usertoken')
                 }
                 await axios.post(`${UURL}addPost`, details).then(res => {
                     if (res.data.posted) {

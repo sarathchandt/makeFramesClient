@@ -11,7 +11,7 @@ const initialState={
 
 
 export const fetchOneProgram = createAsyncThunk('singleProgram/fetchOneProgram',async(id)=>{
-    return  await axios.post(`${UURL}fetchOneProgramBook`,{id:id,token:document.cookie})
+    return  await axios.post(`${UURL}fetchOneProgramBook`,{id:id,token:localStorage.getItem('usertoken')})
 })
 
 const fetchOnePgSlice = createSlice({

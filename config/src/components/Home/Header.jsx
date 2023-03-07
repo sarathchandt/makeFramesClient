@@ -61,7 +61,7 @@ function Header() {
     })
   }
   useEffect(() => {
-    const token = document.cookie
+    const token = localStorage.getItem('usertoken')
     axios.post(`${UURL}loginCheck`, { token: token }).then(response => {
       setLogin(response.data.user)
       dispatch(changeLoginState(response.data.user))

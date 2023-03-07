@@ -10,7 +10,7 @@ const initialState ={
 }
 
 export const fetchAllProgramForBooking = createAsyncThunk('allPost/fetchAllProgramForBooking',async()=>{
-    return await axios.post(`${UURL}bringAllpost`,{token:document.cookie})
+    return await axios.post(`${UURL}bringAllpost`,{token:localStorage.getItem('usertoken')})
 })
 
 const allPostSlice = createSlice({

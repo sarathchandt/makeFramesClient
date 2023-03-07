@@ -10,7 +10,7 @@ let initialState={
 }
 
 export const fetchPost = createAsyncThunk('post/fetchPost',async(page)=>{
-  return await  axios.post(`${UURL}pickPosts`,{token:document.cookie,page:page})
+  return await  axios.post(`${UURL}pickPosts`,{token:localStorage.getItem('usertoken'),page:page})
 })
 
 const postStatusSlice= createSlice({

@@ -34,7 +34,7 @@ function userProfilePage() {
     }, [])
 
     function hypeHim() {
-        let token = document.cookie
+        let token = localStorage.getItem('usertoken')
         const headers = { Authorization: `usertoken ${token}` };
 
         axios.post(`${UURL}hypeHim`, { userId: searchParams.get('profile_id') }, { headers }).then(() => {
