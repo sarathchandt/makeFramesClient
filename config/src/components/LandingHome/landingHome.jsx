@@ -18,7 +18,7 @@ function LandingHome() {
 
   useEffect(() => {
     let token  = localStorage.getItem('usertoken');
-    const headers = { Authorization: `usertoken ${token}` };
+    const headers = { Authorization: `Bearer ${token}` };
 
     axios.get(`${UURL}getDomain`, { headers }).then(res => {
       setCate( res.data)

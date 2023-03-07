@@ -157,7 +157,7 @@ function userProfileLanding() {
 
     function deletePost(id){
         const token = localStorage.getItem('usertoken');
-        const headers = { Authorization: `usertoken ${token}` };
+        const headers = { Authorization: `Bearer ${token}` };
 
         axios.post(`${UURL}deletePost`,{id:id},{headers}).then(res=>{
          dispatch(fetchPost())

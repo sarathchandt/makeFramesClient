@@ -11,7 +11,7 @@ let initialState={
 
 export const checkTocken=createAsyncThunk('token/checkTocken',async()=>{
     const token = localStorage.getItem('adminToken');
-    const headers = { Authorization: `adminToken ${token}` };
+    const headers = { Authorization: `Bearer ${token}` };
     return await axios.get(`${UARL}checkAdminToken`,{ headers })
 })
 

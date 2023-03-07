@@ -32,7 +32,7 @@ function chatFromUser() {
 
     useEffect(()=>{
       const token = localStorage.getItem('usertoken');
-    const headers = { Authorization: `usertoken ${token}` };
+    const headers = { Authorization: `Bearer ${token}` };
 
         axios.get(`${UURL}takePeopleForMessage`,{headers}).then(res=>{
             console.log(res);

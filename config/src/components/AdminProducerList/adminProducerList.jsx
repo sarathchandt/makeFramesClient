@@ -10,7 +10,7 @@ function adminProducerList() {
 
 
     const token = localStorage.getItem('adminToken');
-    const headers = { Authorization: `admin ${token}` };
+    const headers = { Authorization: `Bearer ${token}` };
 
 
     

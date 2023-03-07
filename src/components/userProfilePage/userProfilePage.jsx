@@ -22,7 +22,7 @@ function userProfilePage() {
     const post = useSelector(state => state.fetchPostsOfUser)
     useEffect(() => {
         const token = localStorage.getItem('usertoken');
-    const headers = { Authorization: `usertoken ${token}` };
+    const headers = { Authorization: `Bearer ${token}` };
 
         dispatch(fetchUserData(searchParams.get('profile_id')))
         dispatch(fetchPostsOfUser(searchParams.get('profile_id')))
@@ -35,7 +35,7 @@ function userProfilePage() {
 
     function hypeHim() {
         const token = localStorage.getItem('usertoken');
-    const headers = { Authorization: `usertoken ${token}` };
+    const headers = { Authorization: `Bearer ${token}` };
 
         axios.post(`${UURL}hypeHim`, { userId: searchParams.get('profile_id') }, { headers }).then(() => {
             dispatch(fetchUserData(searchParams.get('profile_id')))
@@ -48,7 +48,7 @@ function userProfilePage() {
     }
     function unHypeHim(){
         const token = localStorage.getItem('usertoken');
-    const headers = { Authorization: `usertoken ${token}` };
+    const headers = { Authorization: `Bearer ${token}` };
 
         axios.post(`${UURL}unHypeHim`, { userId: searchParams.get('profile_id') }, { headers}).then(() => {
             dispatch(fetchUserData(searchParams.get('profile_id')))

@@ -12,7 +12,7 @@ function adminLoding() {
 
   useEffect(() => {
       const token = localStorage.getItem('adminToken');
-      const headers = { Authorization: `admin ${token}` };
+      const headers = { Authorization: `Bearer ${token}` };
 
       axios.get(`${UARL}checkAdminToken`, { headers }).then(res => {
           

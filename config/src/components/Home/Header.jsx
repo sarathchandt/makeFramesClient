@@ -68,7 +68,7 @@ function Header() {
       setFirstname(response.data?.firstName)
       setLastname(response.data?.lastName)
     })
-    const headers = { Authorization: `usertoken ${token}` };
+    const headers = { Authorization: `Bearer ${token}` };
 
     axios.get(`${UURL}getDomain`,{headers}).then(res=>{
       setCategory(res.data)

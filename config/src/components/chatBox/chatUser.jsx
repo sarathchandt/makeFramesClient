@@ -68,7 +68,7 @@ function chatUser() {
       from: self._id
     });
     let token  = localStorage.getItem('usertoken');
-    const headers = { Authorization: `usertoken ${token}` };
+    const headers = { Authorization: `Bearer ${token}` };
 
     axios.post(`${UURL}message`, { from: self._id, to: person._id, message: inputMessage }, { headers });
     setChatNow(chatNow.concat(messages))
@@ -80,7 +80,7 @@ function chatUser() {
     if (unique) {
       setUnique(false)
       let token  = localStorage.getItem('usertoken');
-      const headers = { Authorization: `usertoken ${token}` };
+      const headers = { Authorization: `Bearer ${token}` };
 
       axios.post(`${UURL}tekeMessagePeople`, { headers },{ toId: searchParams.get('userId') } ).then(res => {
         axios.post(`${UURL}takeUsersForChat`,{ headers }, { people: res.data.MessagedPeople } ).then(res => {

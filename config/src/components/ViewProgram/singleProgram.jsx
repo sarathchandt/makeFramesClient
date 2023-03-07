@@ -27,7 +27,7 @@ function SingleProgram() {
   function rejected(id) {
     setBlur(true)
     let token = localStorage.getItem('usertoken')
-    const headers = { Authorization: `usertoken ${token}` };
+    const headers = { Authorization: `Bearer ${token}` };
 
     axios.post(`${UURL}rejectProgram`, { id: id }, { headers }).then(result => {
       location.reload();
@@ -38,7 +38,7 @@ function SingleProgram() {
   function accepted(id) {
     setBlur(true)
     let token = localStorage.getItem('usertoken')
-    const headers = { Authorization: `usertoken ${token}` };
+    const headers = { Authorization: `Bearer ${token}` };
     axios.post(`${UURL}acceptProgram`, { id: id }, { headers }).then(result => {
       location.reload();
     })
@@ -48,7 +48,7 @@ function SingleProgram() {
   useEffect(() => {
     setLoading(true)
     let token = localStorage.getItem('usertoken')
-    const headers = { Authorization: `usertoken ${token}` };
+    const headers = { Authorization: `Bearer ${token}` };
     axios.post(`${UURL}checkBookingHost`, { id: searchParams.get('id') }, { headers }).then(result => {
       setPrograms(result.data)
 
