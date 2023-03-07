@@ -42,12 +42,12 @@ function LandingHome() {
   return (
     <div  >
       {is_loggedIn ? <>
-        {usersAcc?.loading ? <div className='loading  '>
+        {usersAcc?.loading ? <> <div className='h-96 bg-black w-fill'></div> <div className='loading  '>
           <div class="loader">
             <div class="loader-wheel"></div>
             <div class="loader-text"></div>
           </div>
-        </div> :
+        </div></> :
           <div>
             <div className={usersAcc.loading ? 'blur' : ''}>
               <img src="/images/heightstour123rnational-tour-company.jpg" className=' mt-5 object-fit w-full h-6/12 object-cover' alt="" />
