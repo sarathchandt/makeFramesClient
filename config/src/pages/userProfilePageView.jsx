@@ -1,13 +1,13 @@
 import React from 'react'
 import Header from '../components/Home/Header'
-import UserProfilePage from '../components/userProfilePage/userProfilePage.jsx'
+import UserProfile from '../components/userProfilePage/userProfilePage.jsx'
 import Footer from '../components/Footer/Footer'
 
 function userProfilePageView() {
   return (
     <div>
         <Header/>
-        <UserProfilePage/>
+        <UserProfile/>
         <Footer/>
     </div>
   )
