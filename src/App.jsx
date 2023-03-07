@@ -11,7 +11,7 @@ import ViewPrograms from './pages/Viewprograms.jsx';
 import ViewSingleProgram from './pages/ViewSingleProgram';
 import ViewStageProgramUser from "./pages/ViewStageProgramUser";
 import ViewProgramDetails from './pages/ViewProgramDetails';
-// import ViewBookedProgram from './pages/ViewUserBooked';
+import ViewBookedProgram from './pages/ViewUserBooked';
 import ViewHostBooking from './pages/ViewHostBooking';
 import ViewMap from './pages/ViewMap'
 import UserPageForProfile from './pages/UserProfilePageView'
@@ -45,7 +45,7 @@ function App() {
             <Route element={<ViewSingleProgram />} path='/viewSingleProgram' />
             <Route element={<ViewStageProgramUser />} path='/viewStageProgramUser' />
             <Route element={<ViewProgramDetails />} path='/viewProgramDetails' />
-            {/* <Route element={<ViewBookedProgram />} path='/viewBookedProgram' /> */}
+            <Route element={<ViewBookedProgram />} path='/viewBookedProgram' />
             <Route element={<ViewHostBooking />} path="/viewHostBook" />
             <Route element={<ViewMap />} path={'/viewMap'} />
             <Route element={<UserPageForProfile />} path={'/UserPageForProfile'} />
