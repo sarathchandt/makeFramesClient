@@ -82,8 +82,8 @@ function chatUser() {
       let token  = localStorage.getItem('usertoken');
       const headers = { Authorization: `usertoken ${token}` };
 
-      axios.post(`${UURL}tekeMessagePeople`, { toId: searchParams.get('userId') }, { headers }).then(res => {
-        axios.post(`${UURL}takeUsersForChat`, { people: res.data.MessagedPeople }, { headers }).then(res => {
+      axios.post(`${UURL}tekeMessagePeople`, { headers },{ toId: searchParams.get('userId') } ).then(res => {
+        axios.post(`${UURL}takeUsersForChat`,{ headers }, { people: res.data.MessagedPeople } ).then(res => {
           setPeople(res?.data)
         })
         setSelf(res?.data);
