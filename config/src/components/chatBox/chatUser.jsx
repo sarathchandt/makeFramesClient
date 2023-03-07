@@ -33,7 +33,7 @@ function chatUser() {
   const socket = useRef();
   useEffect(() => {
 
-    socket.current = io.connect("http://localhost:3033")
+    socket.current = io.connect("https://makeframes.herewego.shop")
     if (self?._id) {
 
       socket.current.emit("addUser", self._id);
