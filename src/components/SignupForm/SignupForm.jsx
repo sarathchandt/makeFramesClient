@@ -243,6 +243,8 @@ function SignupForm() {
       if (!result.data.is && result.data.serverOtp) {
         navigate("/")      
         document.cookie = `${result.data.token}`
+        localStorage.setItem('usertoken',`${result.data.token}` );
+
       
       } else {
         navigate('/signup');

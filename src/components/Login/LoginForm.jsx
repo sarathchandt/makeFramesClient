@@ -30,6 +30,7 @@ function LoginForm() {
       console.log(result);
       if (result.data?.token && result.data.isuser && result.data.isPass && result.data.blocked == false) {
         document.cookie = `${result.data.token}`
+        localStorage.setItem('usertoken',`${result.data.token}` );
 
         navigate('/')
       } else {
