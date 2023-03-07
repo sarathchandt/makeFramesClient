@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react'
 import axios  from 'axios'
 import { UURL } from '../../../API/apiCall'
 
-function searchPeopleByDomain() {
+function SearchPeopleByDomain() {
 
     const [artists,setArtists]=useState([])
 
@@ -16,4 +16,4 @@ function searchPeopleByDomain() {
   )
 }
 
-export default searchPeopleByDomain
+export default SearchPeopleByDomain

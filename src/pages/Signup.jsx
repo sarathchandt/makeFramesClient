@@ -4,7 +4,7 @@ import SignupForm from '../components/SignupForm/SignupForm'
 import Header from '../components/Home/Header'
 import axios from 'axios'
 import { UURL } from '../../API/apiCall'
-import LandingHome from '../components/LandingHome/landingHome'
+import LandingHome from '../components/LandingHome/LandingHome'
 
 
 

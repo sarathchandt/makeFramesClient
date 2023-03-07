@@ -11,10 +11,10 @@ import ViewPrograms from './pages/Viewprograms.jsx';
 import ViewSingleProgram from './pages/ViewSingleProgram';
 import ViewStageProgramUser from "./pages/ViewStageProgramUser";
 import ViewProgramDetails from './pages/ViewProgramDetails';
-import ViewBookedProgram from './pages/viewUserBooked';
+import ViewBookedProgram from './pages/ViewUserBooked';
 import ViewHostBooking from './pages/ViewHostBooking';
 import ViewMap from './pages/ViewMap'
-import UserPageForProfile from './pages/userProfilePageView'
+import UserPageForProfile from './pages/UserProfilePageView'
 import ChatUserBox from './pages/ChatPage'
 import AdminPrivateRoutes from './pages/AdminPrivateRoutes'
 import SearchPeopleByDomain from './pages/SearchPeopleByDomain'

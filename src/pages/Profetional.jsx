@@ -1,6 +1,6 @@
 import React from 'react'
 import ProfetionalHeader from '../components/Home/ProfetionalHeader'
-import UserProfileLanding from '../components/LandingHome/userProfileLanding' 
+import UserProfileLanding from '../components/LandingHome/UserProfileLanding' 
 import Footer from '../components/Footer/Footer'
 
 function Profetional() {

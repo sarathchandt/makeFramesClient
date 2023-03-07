@@ -1,6 +1,6 @@
 import React from 'react'
 import ProfetionalHeader from '../components/Home/ProfetionalHeader'
-import Map from '../components/ViewProgram/mapComponent'
+import Map from '../components/ViewProgram/MapComponent'
 import Footer from '../components/Footer/Footer'
 function ViewMap() {
   return (

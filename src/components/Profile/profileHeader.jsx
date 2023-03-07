@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import './ProfileHeader.css'
 
-function profileHeader() {
+function ProfileHeader() {
 
     return (
         <div>
@@ -40,4 +40,4 @@ function profileHeader() {
     )
 }
 
-export default profileHeader
+export default ProfileHeader

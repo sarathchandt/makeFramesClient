@@ -3,7 +3,7 @@ import axios from 'axios'
 import { UARL } from '../../../API/apiCall'
 import {BsSearch} from '@react-icons/all-files/bs/BsSearch'
 
-function adminProgramView() {
+function AdminProgramView() {
 
     const [tableDetails, setTableDetails] = useState([])
     const [search, setSearch] = useState('')
@@ -84,4 +84,4 @@ function adminProgramView() {
   )
 }
 
-export default adminProgramView
+export default AdminProgramView

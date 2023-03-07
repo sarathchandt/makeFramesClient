@@ -11,7 +11,7 @@ import './userProfilePage.css'
 import axios from 'axios';
 import { UURL } from '../../../API/apiCall.js';
 
-function userProfilePage() {
+function UserProfilePage() {
 
     const [event, setEvent] = useState(false)
     const navigate = useNavigate()
@@ -146,4 +146,4 @@ function userProfilePage() {
     )
 }
 
-export default userProfilePage
+export default UserProfilePage

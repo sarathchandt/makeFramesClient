@@ -1,5 +1,5 @@
 import React from 'react'
-import ProfileHeader from '../components/Profile/profileHeader'
+import ProfileHeader from '../components/Profile/ProfileHeader'
 
 
 function Profile() {

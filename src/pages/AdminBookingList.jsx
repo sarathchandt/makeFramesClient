@@ -1,7 +1,7 @@
 import React from 'react'
-import SideBar from '../components/AdminSideBar/adminSideBar'
+import SideBar from '../components/AdminSideBar/AdminSideBar'
 import AdminHeader from '../components/Home/AdminHeader'
-import AdminProgramView from '../components/AdminProgramView/adminProgramView'
+import AdminProgramView from '../components/AdminProgramView/AdminProgramView'
 function AdminBookingList() {
   return (
     <div className='relative'>

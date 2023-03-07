@@ -4,7 +4,7 @@ import { UARL } from '../../../API/apiCall'
 
 
 
-function adminDescription() {
+function AdminDescription() {
 
     const [descriptionList, setDescriptionList] = useState([])
     const [descri, setDecri] = useState('')
@@ -49,4 +49,4 @@ function adminDescription() {
     </>)
 }
 
-export default adminDescription
+export default AdminDescription

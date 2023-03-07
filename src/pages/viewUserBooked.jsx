@@ -1,6 +1,6 @@
 import React from "react";
 
-import ViewBookedUser from "../components/ViewBookedUser/viewBookedUser";
+import ViewBookedUser from "../components/ViewBookedUser/ViewBookedUser";
 import Header from "../components/Home/Header";
 import Footer from "../components/Footer/Footer";
 

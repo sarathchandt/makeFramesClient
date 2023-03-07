@@ -21,7 +21,7 @@ import './viewOneBook.css'
 import axios from 'axios';
 import { UURL } from '../../../API/apiCall.js';
 
-function viewOneBook() {
+function ViewOneBook() {
 
     const [events, setEvent] = useState([])
     const [viewport, setViewport] = useState({});
@@ -355,4 +355,4 @@ function viewOneBook() {
     )
 }
 
-export default viewOneBook
+export default ViewOneBook

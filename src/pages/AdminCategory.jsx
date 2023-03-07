@@ -1,7 +1,7 @@
 import React from 'react'
-import SideBar from '../components/AdminSideBar/adminSideBar'
+import SideBar from '../components/AdminSideBar/AdminSideBar'
 import AdminHeader from '../components/Home/AdminHeader'
-import AdminCate from '../components/AdminCategory/adminCategory'
+import AdminCate from '../components/AdminCategory/AdminCategory'
 
 function AdminCategory() {
   return (

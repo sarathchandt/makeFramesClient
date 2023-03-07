@@ -7,7 +7,7 @@ import './loginPage.css'
 
 
 
-function loginPage() {
+function LoginPage() {
 
         const [adminId, setAdminId] = useState()
         const [password, setPassword]= useState()
@@ -50,4 +50,4 @@ function loginPage() {
     )
 }
 
-export default loginPage
+export default LoginPage

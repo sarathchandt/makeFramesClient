@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { UARL } from '../../../API/apiCall'
 import './adminCate.css'
 
-function adminCategory() {
+function AdminCategory() {
 
     const [cate, setCate] = useState([])
     const [category, setCategory] = useState('')
@@ -136,4 +136,4 @@ function adminCategory() {
     )
 }
 
-export default adminCategory
+export default AdminCategory

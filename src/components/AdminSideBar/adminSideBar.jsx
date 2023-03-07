@@ -12,7 +12,7 @@ import { GiTatteredBanner } from '@react-icons/all-files/gi/GiTatteredBanner'
 
 
 
-function adminSideBar() {
+function AdminSideBar() {
 
     const navigate = useNavigate()
     return (
@@ -62,4 +62,4 @@ function adminSideBar() {
     )
 }
 
-export default adminSideBar
+export default AdminSideBar

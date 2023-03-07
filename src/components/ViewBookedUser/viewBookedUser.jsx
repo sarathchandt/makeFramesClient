@@ -8,7 +8,7 @@ import {HiLocationMarker} from '@react-icons/all-files/hi/HiLocationMarker.esm'
 
 
 
-function viewBookedUser() {
+function ViewBookedUser() {
 
     const [bookedPg,setBookedPg] = useState([])
     const fetchedPg = useSelector(state => state.fetchBooked)
@@ -78,4 +78,4 @@ function viewBookedUser() {
     )
 }
 
-export default viewBookedUser
+export default ViewBookedUser

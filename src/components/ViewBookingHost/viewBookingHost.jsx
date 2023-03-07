@@ -1,6 +1,6 @@
 import React from 'react'
 
-function viewBookingHost() {
+function ViewBookingHost() {
   return (
     <div>
 
@@ -9,4 +9,4 @@ function viewBookingHost() {
   )
 }
 
-export default viewBookingHost
+export default ViewBookingHost

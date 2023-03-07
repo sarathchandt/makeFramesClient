@@ -22,7 +22,7 @@ import { UARL } from '../../../API/apiCall'
 
 
 
-function adminLanding() {
+function AdminLanding() {
 
 
     // const [details,setDetails] =useState
@@ -184,4 +184,4 @@ function adminLanding() {
     )
 }
 
-export default adminLanding
+export default AdminLanding

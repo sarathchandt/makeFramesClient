@@ -1,7 +1,7 @@
 import React from 'react'
-import SideBar from '../components/AdminSideBar/adminSideBar'
+import SideBar from '../components/AdminSideBar/AdminSideBar'
 import AdminHeader from '../components/Home/AdminHeader'
-import AdminDesc from '../components/AdminDescription/adminDescription'
+import AdminDesc from '../components/AdminDescription/AdminDescription'
 function AdminDescription() {
   return (
     <div className='relative'>

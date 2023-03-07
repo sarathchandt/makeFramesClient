@@ -5,7 +5,7 @@ import './chatBox.css'
 import { io } from "socket.io-client";
 
 
-function chatFromUser() {
+function ChatFromUser() {
     const [chatUsers,setChatUsers]= useState([])
     const [person, setPerson] = useState(null) 
     const [chatNow, setChatNow] = useState([])
@@ -220,4 +220,4 @@ function chatFromUser() {
   )
 }
 
-export default chatFromUser
+export default ChatFromUser

@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/Home/Header'
-import ChatBox from '../components/ChatBox/chatUser'
+import ChatBox from '../components/ChatBox/ChatUser'
 
 function chatPage() {
   return (

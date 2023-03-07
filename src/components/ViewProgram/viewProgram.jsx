@@ -6,7 +6,7 @@ import './viewProgram.css'
 import axios from 'axios';
 import { UURL } from '../../../API/apiCall.js';
 
-function viewProgram() {
+function ViewProgram() {
 
   const navigate = useNavigate()
   const programs = useSelector(state => state.fetchProgram)
@@ -84,4 +84,4 @@ console.log(programs.programs?.data);
   )
 }
 
-export default viewProgram
+export default ViewProgram

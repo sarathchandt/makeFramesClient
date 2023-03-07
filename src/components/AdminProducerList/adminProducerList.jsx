@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { UARL } from '../../../API/apiCall'
 import {BsSearch} from '@react-icons/all-files/bs/BsSearch'
 
-function adminProducerList() {
+function AdminProducerList() {
 
     const [tableDetails, setTableDetails] = useState([])
     const [search, setSearch] = useState('')
@@ -81,4 +81,4 @@ function adminProducerList() {
     )
 }
 
-export default adminProducerList
+export default AdminProducerList

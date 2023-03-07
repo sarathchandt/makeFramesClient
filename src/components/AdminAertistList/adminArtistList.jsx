@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { UARL } from '../../../API/apiCall'
 import {BsSearch} from '@react-icons/all-files/bs/BsSearch'
 
-function adminArtistList() {
+function AdminArtistList() {
 
     const [tableDetails, setTableDetails] = useState([])
     const [selectedDetails, setSelectedDetails] = useState([])
@@ -85,4 +85,4 @@ function adminArtistList() {
     )
 }
 
-export default adminArtistList
+export default AdminArtistList

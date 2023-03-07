@@ -15,7 +15,7 @@ import { MdDelete} from '@react-icons/all-files/md/MdDelete'
 import toast,{ Toaster } from 'react-hot-toast'
 
 
-function userProfileLanding() {
+function UserProfileLanding() {
 
 
     const postCondition = useSelector(state => {
@@ -374,4 +374,4 @@ function userProfileLanding() {
     )
 }
 
-export default userProfileLanding
+export default UserProfileLanding

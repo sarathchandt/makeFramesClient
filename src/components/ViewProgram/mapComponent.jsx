@@ -6,7 +6,7 @@ import './viewProgram.css'
 
 
 
-function mapComp() {
+function MapComp() {
     const [searchParams] = useSearchParams()
 
     const [lat, setLat] = useState(searchParams.get('lat'))
@@ -185,4 +185,4 @@ function mapComp() {
     )
 }
 
-export default mapComp
+export default MapComp
