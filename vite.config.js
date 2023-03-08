@@ -6,5 +6,13 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 8000 
-  }
+  },
+   resolve: {
+    alias: [
+      {
+        find: './runtimeConfig',
+        replacement: './runtimeConfig.browser',
+      },
+    ]
+  },
 })
