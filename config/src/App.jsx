@@ -1,33 +1,33 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Signup from "./pages/Signup"
-import PrivateRoutes from './pages/PrivateRoutes';
-import Profile from './pages/Profile';
-import ProfetionalProfile from './pages/Profetional.jsx';
-import AddProgram from './pages/AddPrograms';
-import ViewPrograms from './pages/Viewprograms.jsx';
-import ViewSingleProgram from './pages/ViewSingleProgram';
-import ViewStageProgramUser from "./pages/ViewStageProgramUser";
-import ViewProgramDetails from './pages/ViewProgramDetails';
-import ViewBookedProgram from './pages/viewUserBooked';
-import ViewHostBooking from './pages/ViewHostBooking';
-import ViewMap from './pages/ViewMap'
-import UserPageForProfile from './pages/userProfilePageView'
-import ChatUserBox from './pages/ChatPage'
-import AdminPrivateRoutes from './pages/AdminPrivateRoutes'
+import Home from './Pages/Home';
+import Login from './Pages/Login';
+import Signup from "./Pages/Signup"
+import PrivateRoutes from './Pages/PrivateRoutes';
+import Profile from './Pages/Profile';
+import ProfetionalProfile from './Pages/Profetional.jsx';
+import AddProgram from './Pages/AddPrograms';
+import ViewPrograms from './Pages/Viewprograms.jsx';
+import ViewSingleProgram from './Pages/ViewSingleProgram';
+import ViewStageProgramUser from "./Pages/ViewStageProgramUser";
+import ViewProgramDetails from './Pages/ViewProgramDetails';
+import ViewBookedProgram from './Pages/viewUserBooked';
+import ViewHostBooking from './Pages/ViewHostBooking';
+import ViewMap from './Pages/ViewMap'
+import UserPageForProfile from './Pages/userProfilePageView'
+import ChatUserBox from './Pages/ChatPage'
+import AdminPrivateRoutes from './Pages/AdminPrivateRoutes'
 
 // admn
 
-import AdminLogin from './pages/AdminLogin'
-import AdminLanding from './pages/AdminLanding'
-import AdminArtistList from './pages/AdminArtistList'
-import AdminProducerList from './pages/AdminProducerList'
-import AdminBookingList from './pages/AdminBookingList'
-import AdminCategory from './pages/AdminCategory'
-import AdminDescription from './pages/AdminDescription'
-import ChatFromUser from './pages/ChatFromUser'
+import AdminLogin from './Pages/AdminLogin'
+import AdminLanding from './Pages/AdminLanding'
+import AdminArtistList from './Pages/AdminArtistList'
+import AdminProducerList from './Pages/AdminProducerList'
+import AdminBookingList from './Pages/AdminBookingList'
+import AdminCategory from './Pages/AdminCategory'
+import AdminDescription from './Pages/AdminDescription'
+import ChatFromUser from './Pages/ChatFromUser'
 function App() {
 
 
