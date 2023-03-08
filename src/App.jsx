@@ -14,7 +14,7 @@ import ViewProgramDetails from './pages/ViewProgramDetails';
 import ViewBookedProgram from './pages/viewUserBooked';
 import ViewHostBooking from './pages/ViewHostBooking';
 import ViewMap from './pages/ViewMap'
-import UserPageForProfile from './pages/UserProfilePageView'
+import UserPageForProfile from './pages/userProfilePageView'
 import ChatUserBox from './pages/ChatPage'
 import AdminPrivateRoutes from './pages/AdminPrivateRoutes'
 import SearchPeopleByDomain from './pages/SearchPeopleByDomain'
