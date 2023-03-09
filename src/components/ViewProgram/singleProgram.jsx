@@ -11,7 +11,7 @@ import { HiLocationMarker } from '@react-icons/all-files/hi/HiLocationMarker'
 import { FaHandshake } from "@react-icons/all-files/fa/FaHandshake.esm"
 import { SiGooglecalendar } from '@react-icons/all-files/si/SiGooglecalendar'
 import { BsFillClockFill } from '@react-icons/all-files/bs/BsFillClockFill'
-import { GiEmptyMetalBucketHandle } from '@react-icons/all-files/gi/GiEmptyMetalBucketHandle'
+
 function SingleProgram() {
 
   const [searchParams] = useSearchParams()

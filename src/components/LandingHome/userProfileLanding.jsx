@@ -29,7 +29,7 @@ function UserProfileLanding() {
     const [showPost, setShowPost] = useState([])
     const [profileDetails, setProfileDetails] = useState([])
     const [coment, setComent] = useState('')
-    const [file] = useState([])
+    const [file, setFiles] = useState([])
     const [imageArray] = useState([])
     const [pages, setPages] = useState([])
     const [event, setEvent] = useState(false)
@@ -75,6 +75,7 @@ function UserProfileLanding() {
                         navigate('/profetionalProfile')
                         dispatch(fetchPost())
                         toast.dismiss()
+                        setFiles([])
                         setLoading('finished')
                     }
                 })

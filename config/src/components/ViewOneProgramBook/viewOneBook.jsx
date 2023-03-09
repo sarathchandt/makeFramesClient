@@ -12,7 +12,7 @@ import {unBook} from '../../../slices/bookProgram.mjs'
 
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
-import "react-big-calendar/lib/css/react-big-calendar.css";
+import "/react-big-calendar/lib/css/react-big-calendar.css";
 import { MdDescription } from '@react-icons/all-files/md/MdDescription.esm'
 import { FaUserAlt } from '@react-icons/all-files/fa/FaUserAlt.esm'
 import { MdVideoLabel } from '@react-icons/all-files/Md/MdVideoLabel.esm'
