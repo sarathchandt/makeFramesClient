@@ -132,6 +132,7 @@ function UserProfileLanding() {
 
 
     function sendToBack(e) {
+        setLoading(true)
         const data = new FormData();
         data.append('file', e.target.files[0])
         data.append("upload_preset", 'nefiqdoa')
@@ -143,6 +144,7 @@ function UserProfileLanding() {
                 axios.post(`${UURL}bringDp`, { token: token }).then((result) => {
                     setImg(result.data.dpimage)
                     setProfileDetails(result.data)
+                    setLoading(false)
         
                 })
             })
