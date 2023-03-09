@@ -56,7 +56,6 @@ function ViewForBookPrograms() {
     const token = localStorage.getItem('usertoken')
     const headers = { Authorization: `Bearer ${token}` };
     axios.get(`${UURL}getProgramDomain`, { headers }).then(res => {
-      console.log(res);
       setCate(res.data)
     })
   }, [])

@@ -17,6 +17,7 @@ import graph from '../slices/graphGrowthSlice.mjs'
 import bookingGraph from '../slices/bookingGraph.mjs'
 import details from '../slices/takeTotalDetails.mjs'
 import token from '../slices/adminPrivateRouteCheck.mjs'
+import profileSearch from '../slices/searchProfileByDomain.mjs'
 
 const store = configureStore({
     reducer : {
@@ -37,7 +38,8 @@ const store = configureStore({
         graph:graph,
         bookingGraph:bookingGraph,
         details:details,
-        token:token
+        token:token,
+        profileSearch:profileSearch
         
         
     },

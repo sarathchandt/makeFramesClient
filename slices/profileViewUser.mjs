@@ -11,13 +11,12 @@ const initialState ={
 export const fetchUserData=createAsyncThunk('user/fetchUserData',async(id)=>{
     const token = localStorage.getItem('usertoken');
     const headers = { Authorization: `Bearer ${token}` };
-
     return await axios.post(`${UURL}fetchUserData`,{id:id},{headers})
 })
 
 const fetchUserDataSlice= createSlice({
     name:'user',
-    initialState:initialState,
+    initialState:initialState, 
     extraReducers:(builders)=>{
         builders.addCase(fetchUserData.pending,(state)=>{
             state.loading=true

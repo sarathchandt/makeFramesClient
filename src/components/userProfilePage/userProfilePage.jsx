@@ -16,50 +16,48 @@ function UserProfilePage() {
     const [event, setEvent] = useState(false)
     const navigate = useNavigate()
     const [searchParams] = useSearchParams()
-    const [hype, setHype]=useState(false)
+    const [hype, setHype] = useState(false)
     const dispatch = useDispatch()
     const user = useSelector(state => state.fetchUserData)
     const post = useSelector(state => state.fetchPostsOfUser)
     useEffect(() => {
         const token = localStorage.getItem('usertoken');
-    const headers = { Authorization: `Bearer ${token}` };
+        const headers = { Authorization: `Bearer ${token}` };
 
         dispatch(fetchUserData(searchParams.get('profile_id')))
         dispatch(fetchPostsOfUser(searchParams.get('profile_id')))
-        axios.post(`${UURL}takeHypeStatus`, { userId: searchParams.get('profile_id') },{headers}).then(res=>{
-                setHype(res.data.hype)
-                console.log(res,"hhh");
+        axios.post(`${UURL}takeHypeStatus`, { userId: searchParams.get('profile_id') }, { headers }).then(res => {
+            setHype(res.data.hype)
 
         })
     }, [])
 
     function hypeHim() {
         const token = localStorage.getItem('usertoken');
-    const headers = { Authorization: `Bearer ${token}` };
+        const headers = { Authorization: `Bearer ${token}` };
 
         axios.post(`${UURL}hypeHim`, { userId: searchParams.get('profile_id') }, { headers }).then(() => {
             dispatch(fetchUserData(searchParams.get('profile_id')))
-            axios.post(`${UURL}takeHypeStatus`, { userId: searchParams.get('profile_id') },{headers}).then(res=>{
-                console.log(res,"hhh");
+            axios.post(`${UURL}takeHypeStatus`, { userId: searchParams.get('profile_id') }, { headers }).then(res => {
                 setHype(res.data.hype)
-                
-        })
+
+            })
         })
     }
-    function unHypeHim(){
+    function unHypeHim() {
         const token = localStorage.getItem('usertoken');
-    const headers = { Authorization: `Bearer ${token}` };
+        const headers = { Authorization: `Bearer ${token}` };
 
-        axios.post(`${UURL}unHypeHim`, { userId: searchParams.get('profile_id') }, { headers}).then(() => {
+        axios.post(`${UURL}unHypeHim`, { userId: searchParams.get('profile_id') }, { headers }).then(() => {
             dispatch(fetchUserData(searchParams.get('profile_id')))
-            axios.post(`${UURL}takeHypeStatus`, { userId: searchParams.get('profile_id') },{headers}).then(res=>{
+            axios.post(`${UURL}takeHypeStatus`, { userId: searchParams.get('profile_id') }, { headers }).then(res => {
                 setHype(res.data.hype)
-                
-        })
+
+            })
         })
     }
 
-   
+
 
     function goToChat(userId) {
         navigate({
@@ -91,7 +89,7 @@ function UserProfilePage() {
                                     <h4 class="mt-3">{user?.userDetails?.data?.firstName}</h4>
                                     <button class="btn text-white btn-sm follow  mt-3 bg-darkGreen hover:bg-darkGreen w-11/12" onClick={() => { goToChat(user?.userDetails?.data?._id) }}>Message</button><br />
                                     {hype ? <button class="btn text-white btn-sm follow w-11/12 mt-1 mb-4 bg-red hover:bg-red" onClick={() => { unHypeHim() }}>Remove Hype</button> :
-                                    <button class="btn text-white btn-sm follow w-11/12 mt-1 mb-4 bg-red hover:bg-red" onClick={() => { hypeHim() }}>Give Hype </button>}
+                                        <button class="btn text-white btn-sm follow w-11/12 mt-1 mb-4 bg-red hover:bg-red" onClick={() => { hypeHim() }}>Give Hype </button>}
                                 </div>
                             </div>
                         </div>

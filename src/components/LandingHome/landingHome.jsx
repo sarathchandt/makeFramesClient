@@ -27,7 +27,7 @@ function LandingHome() {
     localStorage.getItem('usertoken') ?
       dispatch(fetchUserDetails()) : null
   }, [])
-  console.log(category);
+
   function goToProfile(id) {
     navigate({
       pathname: '/UserPageForProfile',
@@ -36,15 +36,17 @@ function LandingHome() {
       }).toString()
     })
   }
-function searchPeopleByDomain(name){
-  navigate({
-    pathname: '/searchPeopleByDomain',
-    search: createSearchParams({
-      domain:name
-    }).toString()
-  })
 
-}
+
+  function searchPeopleByDomain(name) {
+    navigate({
+      pathname: '/searchPeopleByDomain',
+      search: createSearchParams({
+        domain: name
+      }).toString()
+    })
+
+  }
 
 
   return (
@@ -94,8 +96,8 @@ function searchPeopleByDomain(name){
               <div className="row">
                 <div className="col-12 mt-5 mb-2">Search People By Domain</div>
                 {cate?.map(obj => {
-                  return <div className="col-md-4 p-2 d-flex justify-content-center  " onClick={()=>{
-                     searchPeopleByDomain(obj?.name)
+                  return <div className="col-md-4 p-2 d-flex justify-content-center  " onClick={() => {
+                    searchPeopleByDomain(obj?.name)
                   }}>
                     <button className='btn bg-green hover:bg-green text-white ' style={{ width: '70%' }} > {obj?.name}</button>
                   </div>

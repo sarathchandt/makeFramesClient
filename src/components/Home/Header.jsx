@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import { changeState } from '../../../slices/isArtist.mjs'
-import {changeLoginState} from '../../../slices/loginUser.mjs'
+import { changeLoginState } from '../../../slices/loginUser.mjs'
 
 
 import './Header.css'
@@ -36,8 +36,8 @@ function Header() {
   const [proprofile, setProprofile] = useState(false)
   const [domain, setDomain] = useState('')
   const [about, setAbout] = useState('')
-  const [category, setCategory]=useState([])
-  
+  const [category, setCategory] = useState([])
+
 
 
   const dispatch = useDispatch();
@@ -51,12 +51,12 @@ function Header() {
     let data = {
       domain: domain,
       about: about,
-      token:token
+      token: token
     }
     axios.post(`${UURL}registerArtist`, data).then((result) => {
-      if(result.data.artistDone==true){
+      if (result.data.artistDone == true) {
         navigate('/profetionalProfile')
-        
+
       }
     })
   }
@@ -68,22 +68,22 @@ function Header() {
       setFirstname(response.data?.firstName)
       setLastname(response.data?.lastName)
     })
-    
+
     const headers = { Authorization: `Bearer ${token}` };
 
-    axios.get(`${UURL}getDomain`,{headers}).then(res=>{
+    axios.get(`${UURL}getDomain`, { headers }).then(res => {
       console.log(res);
       setCategory(res.data)
     })
     axios.post(`${UURL}checkArtist`, { token: token }).then((response) => {
       dispatch(changeState(response.data.isArtist))
       console.log(response);
-      
+
     })
-  },[])
-  
+  }, [])
+
   console.log(category);
-  function logout(){
+  function logout() {
     localStorage.removeItem('usertoken');
     navigate('/login')
   }
@@ -93,8 +93,8 @@ function Header() {
     <>
 
       <div className='flex flex-nowrap p-2'>
-        <p className='green  font-bold' onClick={()=>{navigate('/')}}>Make</p>
-        <p className='red  font-bold' onClick={()=>{navigate('/')}} >frames</p>
+        <p className='green  font-bold' onClick={() => { navigate('/') }}>Make</p>
+        <p className='red  font-bold' onClick={() => { navigate('/') }} >frames</p>
 
 
         <div className='flex  details  ' style={{ color: "#3C6255" }} id="navitems" >
@@ -115,7 +115,7 @@ function Header() {
               navigate("/login")
             }}>Login</p>
           }
-          
+
         </div>
         <div className={profilebar ? 'profile active p bg-green' : 'profile bg-green'}>
 
@@ -133,15 +133,15 @@ function Header() {
               <div className='d-flex  justify-content-start col-9   ' onClick={() => {
                 setProfilebar(false)
                 is_artist ? navigate('/profetionalProfile') : setProprofile(true);
-              }} >{is_artist ? 'Artist Profile':'Be An Artist' } </div>
+              }} >{is_artist ? 'Artist Profile' : 'Be An Artist'} </div>
             </div>
             <div className='row cursor text-darkGreen hover:text-white hover:bg-red p-2'>
               <div className='d-flex  justify-content-end col-3 mt-1'> <FaMoneyBillAlt style={{ fontSize: '20px' }} />  </div>
-              <div className='d-flex  justify-content-start col-9 ' onClick={()=>{navigate('/viewBookedProgram')}}>Bookings</div>
+              <div className='d-flex  justify-content-start col-9 ' onClick={() => { navigate('/viewBookedProgram') }}>Bookings</div>
             </div>
             <div className='row cursor text-darkGreen hover:text-white hover:bg-red p-2'>
               <div className='d-flex  justify-content-end col-3 mt-1'> <FiLogIn style={{ fontSize: '20px' }} />  </div>
-              <div className='d-flex  justify-content-start col-9 ' onClick={()=>{logout()}}>Logout </div>
+              <div className='d-flex  justify-content-start col-9 ' onClick={() => { logout() }}>Logout </div>
             </div>
           </div>
         </div>
@@ -164,22 +164,23 @@ function Header() {
                 <div className='d-flex  justify-content-start col-12 text-darkGreen  mt-3'>Choose Domain</div>
                 <div className='d-flex  justify-content-center col-12 text-darkGreen  ' >
                   <select className='bg-green border border-3 rounded w-full m-2 border-darkGreen mb-4' onClick={(e) => { setDomain(e.target.value) }}   >
-                  <option value="" style={{ display: 'none' }} >Choose </option>
-                    {category?.map(e=>{
+                    <option value="" style={{ display: 'none' }} >Choose </option>
+                    {category?.map(e => {
                       return <>
-                      <option value={e?.name } className='bg-darkGreen text-white'  >{e?.name}</option>
-                    </>})
-                    } 
-                   
+                        <option value={e?.name} className='bg-darkGreen text-white'  >{e?.name}</option>
+                      </>
+                    })
+                    }
+
 
                   </select>
                 </div>
-                <div className='d-flex  justify-content-end col-12'><button type='submit' className='btn bg-darkGreen text-white hover:bg-red m-2' onClick={()=>{setProprofile(false)}}>Make Profile</button></div>
+                <div className='d-flex  justify-content-end col-12'><button type='submit' className='btn bg-darkGreen text-white hover:bg-red m-2' onClick={() => { setProprofile(false) }}>Make Profile</button></div>
               </div>
             </div>
           </form>
         </div>
-{/* above code to change form.................................................. */}
+        {/* above code to change form.................................................. */}
 
 
         <div className='details toggle p-1 text-green cursor' onClick={() => {
@@ -222,12 +223,7 @@ function Header() {
               }}>Login </div>}
 
             </div>
-            <div className='row cursor text-darkGreen hover:text-white hover:bg-red p-2'onClick={() => {
-            navigate("/admin")
-          }} >
-              <div className='d-flex  justify-content-end col-3 mt-1'> <BsFillInfoCircleFill style={{ fontSize: '20px' }} />  </div>
-              <div className='d-flex  justify-content-start col-9 '>Admin Console</div>
-            </div>
+           
 
           </div>
 
