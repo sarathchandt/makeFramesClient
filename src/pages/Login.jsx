@@ -6,7 +6,7 @@ import axios from 'axios';
 import { UURL } from '../../API/apiCall';
 import Header from '../components/Home/Header'
 import LoginForm from "../components/Login/LoginForm";
-import LandingHome from '../components/LandingHome/LandingHome'
+import LandingHome from '../components/LandingHome/landingHome'
 
 function Login() {
 
