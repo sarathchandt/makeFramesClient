@@ -139,7 +139,12 @@ function UserProfileLanding() {
             const token = localStorage.getItem('usertoken')
             axios.post(`${UURL}profilePic`, { image: result.data.secure_url, token: token }).then(() => {
                 setAddimage(false)
-                location.reload()
+                // location.reload()
+                axios.post(`${UURL}bringDp`, { token: token }).then((result) => {
+                    setImg(result.data.dpimage)
+                    setProfileDetails(result.data)
+        
+                })
             })
         })
 
