@@ -51,7 +51,6 @@ function  AddProgramform() {
 
 const uploadForm = async () => {
     setLoding(true)
-    if(!throttleClick){
         if(name.length==0){
             setLoding(false)
             toast.custom(<div className='bg-red p-2 rounded flex'> <AiFillInfoCircle className='mt-1 mr-1'/>Please add a name</div>,{icon:<AiFillInfoCircle/>,style: {}, duration: 2000,
@@ -108,11 +107,9 @@ const uploadForm = async () => {
           
         }).catch(err => console.log(err))
 
-        setThrottleClick(true)
-        setTimeout(() => {
-            setThrottleClick(false);
-          }, 1000);
-    }
+       
+       
+    
     }
 
 
