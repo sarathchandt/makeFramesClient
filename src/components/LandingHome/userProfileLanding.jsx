@@ -52,8 +52,12 @@ function UserProfileLanding() {
     }
    
     const upload = () => {
-        setLoading('pending')
-        const data = new FormData()
+        if(file.length==0){
+            toast.error('Please Add An Image')
+        }else{
+
+            setLoading('pending')
+            const data = new FormData()
         file.forEach(async (image) => {
             data.append('file', image)
             data.append("upload_preset", 'nefiqdoa')
@@ -76,7 +80,8 @@ function UserProfileLanding() {
                 })
             })
         })
-
+        
+    }
 
     }
 
