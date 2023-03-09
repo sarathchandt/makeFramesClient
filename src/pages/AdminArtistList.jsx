@@ -1,7 +1,7 @@
 import React from 'react'
-import SideBar from '../components/AdminSideBar/AdminSideBar'
-import AdminHeader from '../components/Home/AdminHeader'
-import Artist from '../components/AdminAertistList/AdminArtistList'
+import SideBar from '../components/AdminSideBar/adminSideBar'
+import AdminHeader from '../components/Home/adminHeader'
+import Artist from '../components/AdminAertistList/adminArtistList'
 function AdminArtistList() {
   return (
     <div className='relative'>

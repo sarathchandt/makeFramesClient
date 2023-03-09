@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/Home/Header'
-import PeopleDomain from '../components/SearchPeopleByDomain/SearchPeopleByDomain'
+import PeopleDomain from '../components/SearchPeopleByDomain/searchPeopleByDomain'
 import Footer from '../components/Footer/Footer'
 
 function SearchPeopleByDomain() {

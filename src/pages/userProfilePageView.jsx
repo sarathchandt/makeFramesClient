@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/Home/Header'
-import UserProfilePage from '../components/UserProfilePage/UserProfilePage'
+import UserProfilePage from '../components/UserProfilePage/userProfilePage'
 import Footer from '../components/Footer/Footer'
 
 function userProfilePageView() {

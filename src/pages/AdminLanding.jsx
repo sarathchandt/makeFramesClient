@@ -1,6 +1,6 @@
-import AdminHeader from '../components/Home/AdminHeader'
-import AdminLanding from '../components/LandingHome/AdminLanding'
-import SideBar from '../components/AdminSideBar/AdminSideBar'
+import AdminHeader from '../components/Home/adminHeader'
+import AdminLanding from '../components/LandingHome/adminLanding'
+import SideBar from '../components/AdminSideBar/adminSideBar'
 import React from 'react'
 
 

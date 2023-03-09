@@ -2,7 +2,7 @@ import React from 'react'
 
 import ProfetionalHeader from '../components/Home/ProfetionalHeader'
 import Footer from '../components/Footer/Footer'
-import ViewBookingHost from '../components/ViewBookingHost/ViewBookingHost'
+import ViewBookingHost from '../components/ViewBookingHost/viewBookingHost'
 
 function ViewHostBooking() {
   return (

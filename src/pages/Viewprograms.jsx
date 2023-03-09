@@ -1,6 +1,6 @@
 import React from 'react'
 import ProfetionalHeader from '../components/Home/ProfetionalHeader'
-import ViewProgram from '../components/ViewProgram/ViewProgram'
+import ViewProgram from '../components/ViewProgram/viewProgram'
 import Footer from '../components/Footer/Footer'
 
 

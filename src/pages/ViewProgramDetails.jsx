@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from "../components/Home/Header"
-import ViewOneBook from '../components/ViewOneProgramBook/ViewOneBook'
+import ViewOneBook from '../components/ViewOneProgramBook/viewOneBook'
 import Footer from '../components/Footer/Footer'
 
 function ViewProgramDetails() {
