@@ -145,6 +145,7 @@ function UserProfileLanding() {
                     setImg(result.data.dpimage)
                     setProfileDetails(result.data)
                     setLoading(false)
+                    toast.success('Profile pic uploaded')
         
                 })
             })
