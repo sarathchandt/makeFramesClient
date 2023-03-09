@@ -83,7 +83,7 @@ function SignupForm() {
         })
 
       }
-      else if (lastName.length < 4) {
+      else if (lastName.length < 1) {
 
         resolve({
           lastName: false,
@@ -109,7 +109,7 @@ function SignupForm() {
 
         Toast.fire({
           icon: 'warning',
-          title: 'Lastname name must contain four letters',
+          title: "Lastname can't be empty ",
         })
       }
       else if (!EMAIL_REGEX.test(email)) {
@@ -229,7 +229,6 @@ function SignupForm() {
 
 
   const sentOtp = () => {
-    console.log("llllllllllll");
     axios.post(`${UURL}otp`, { email: email }).then((response) => {
       console.log(response.data);
     })
@@ -244,6 +243,7 @@ function SignupForm() {
         navigate("/")      
         // document.cookie = `${result.data.token}`
         localStorage.setItem('usertoken',`${result.data.token}` );
+        location.reload()
 
       
       } else {
