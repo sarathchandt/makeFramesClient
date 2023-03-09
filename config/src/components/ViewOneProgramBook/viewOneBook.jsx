@@ -10,13 +10,13 @@ import toast,{ Toaster } from 'react-hot-toast'
 import {bookedFunction} from '../../../slices/bookProgram.mjs'
 import {unBook} from '../../../slices/bookProgram.mjs'
 
-import { Calendar, momentLocalizer } from "react-big-calendar";
+import { Calendar, momentLocalizer } from  "react-big-calendar";
 import moment from "moment";
-import "/react-big-calendar/lib/css/react-big-calendar.css";
-import { MdDescription } from '@react-icons/all-files/md/MdDescription.esm'
-import { FaUserAlt } from '@react-icons/all-files/fa/FaUserAlt.esm'
-import { MdVideoLabel } from '@react-icons/all-files/Md/MdVideoLabel.esm'
-import { HiCurrencyRupee } from '@react-icons/all-files/hi/HiCurrencyRupee.esm'
+import "react-big-calendar/lib/css/react-big-calendar.css";
+import { MdDescription } from '@react-icons/all-files/md/MdDescription'
+import { FaUserAlt } from '@react-icons/all-files/fa/FaUserAlt'
+import { MdVideoLabel } from '@react-icons/all-files/Md/MdVideoLabel'
+import { HiCurrencyRupee } from '@react-icons/all-files/hi/HiCurrencyRupee'
 import './viewOneBook.css'
 import axios from 'axios';
 import { UURL } from '../../../API/apiCall.js';
