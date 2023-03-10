@@ -92,6 +92,7 @@ function LoginForm() {
             <p className='mt-9 justify-center cursor' onClick={() => {
               navigate("/signup")
             }}>Don't have an account ? click here to create</p>
+            <p className='pt-3 cursor-pointer' onClick={()=>{navigate('/forgotPass')}}>Forgot password ? click here</p>
         
         </form>
         </div>

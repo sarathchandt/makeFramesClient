@@ -18,6 +18,10 @@ import UserPageForProfile from './pages/userProfilePageView'
 import ChatUserBox from './pages/ChatPage'
 import AdminPrivateRoutes from './pages/AdminPrivateRoutes'
 import SearchPeopleByDomain from './pages/SearchPeopleByDomain'
+import ForgotPass from './pages/ForgotPass'
+import OtpSubmit from './pages/OtpSubmit'
+import Password from './pages/Password'
+
 
 // admn
 
@@ -55,9 +59,12 @@ function App() {
           </Route>
 
 
+            <Route element={<ForgotPass/>} path = '/forgotPass'/>
           <Route exact path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
+          <Route element={<OtpSubmit/>} path = '/otpSubmit'/>
+          <Route element={<Password/>} path= '/passWord'/>
 
 
 
@@ -68,6 +75,7 @@ function App() {
             <Route element={<AdminBookingList/>} path = '/adminBookingList'/>
             <Route element={<AdminCategory/>} path = '/adminCategory'/>
             <Route element={<AdminDescription/>} path = '/adminDescription'/>
+
           </Route>
 
 
