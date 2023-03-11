@@ -8,7 +8,7 @@ import { io } from "socket.io-client";
 
 import './chatBox.css'
 
-function ChatUser() {
+function chatUser() {
 
   const [people, setPeople] = useState([])
   const [socketMessages, setSocketMessages] = useState(null)
@@ -30,13 +30,13 @@ function ChatUser() {
 
 
   const messageRef = useRef();
-  const socket = useRef();
+  let socket = io.connect("http://localhost:3033/")
+  
   useEffect(() => {
 
-    socket.current = io.connect("https://makeframes.herewego.shop")
     if (self?._id) {
 
-      socket.current.emit("addUser", self._id);
+      socket.emit("addUser", self._id);
     }
   }, [self._id])
 
@@ -47,11 +47,16 @@ function ChatUser() {
 
 
   function setupPerson(obj) {
-
-    axios.post(`${UURL}getChat`, { userid2: obj._id, userid1: self._id }, { withCredentials: true }).then(res => {
+    let token  = localStorage.getItem('usertoken');
+    const headers = { Authorization: `Bearer ${token}` };
+    axios.post(`${UURL}getChat`, { userid2: obj._id, userid1: self._id }, { headers }).then(res => {
       setChatNow(res?.data)
     })
     setPerson(obj)
+    axios.post(`${UURL}bringDp`, { token:token }).then(res=>{
+      setSelf(res?.data)
+    })
+
   }
 
   function sendMsg() {
@@ -62,37 +67,48 @@ function ChatUser() {
       min: new Date().getMinutes()
     }
 
-    socket.current.emit("send-msg", {
+    socket.emit("send-msg", {
       to: person._id,
       messages: inputMessage,
       from: self._id
     });
+    let token  = localStorage.getItem('usertoken');
+    const headers = { Authorization: `Bearer ${token}` };
+    
+    console.log(token);
+    axios.post(`${UURL}message`, { from: self._id, to: person._id, message: inputMessage }, { headers });
 
-    axios.post(`${UURL}message`, { from: self._id, to: person._id, message: inputMessage }, { withCredentials: true });
     setChatNow(chatNow.concat(messages))
     setInputMessage('')
 
   }
-
+ 
   useEffect(() => {
-    if (unique) {
-      setUnique(false)
-      axios.post(`${UURL}tekeMessagePeople`, { toId: searchParams.get('userId') }, { withCredentials: true }).then(res => {
-        axios.post(`${UURL}takeUsersForChat`, { people: res.data.MessagedPeople }, { withCredentials: true }).then(res => {
+   
+      let token  = localStorage.getItem('usertoken');
+      const headers = { Authorization: `Bearer ${token}` };
+      axios.post(`${UURL}tekeMessagePeople`, { toId: searchParams.get('userId') },{ headers} ).then(res => {
+       
+        axios.post(`${UURL}takeUsersForChat`, { people: res?.data?.MessagedPeople }, { headers } ).then(res => {
           setPeople(res?.data)
         })
         setSelf(res?.data);
 
+
       })
-    }
+  
+
   }, [])
   useEffect(() => {
 
-    if (socket.current) {
-      socket.current.on("receive", (data) => {
-       axios.get(`${UURL}bringDp`, { withCredentials: true }).then(res=>{
-            console.log(res.data._id, "ll", data.from);
-            if (res.data._id != data.from) {
+    if (socket) {
+      let token  = localStorage.getItem('usertoken');
+      const headers = { Authorization: `Bearer ${token}` };
+      socket.on("receive", (data) => {
+       axios.post(`${UURL}bringDp`, { token:token }).then(res=>{
+        console.log(self);
+        
+            if (res.data._id != data.from &&  data?.to == res.data._id) {
               setSocketMessages({ myself: false, message: data.messages });
             }
           })
@@ -104,7 +120,6 @@ function ChatUser() {
     socketMessages && setChatNow((pre) => [...pre, socketMessages]);
   }, [socketMessages]);
 
-  console.log(chatNow);
 
   return (
     <div>
@@ -128,12 +143,11 @@ function ChatUser() {
                     people.map(obj => {
                       return <>
                         <a href="#" class="list-group-item list-group-item-action border-0 mt-2" onClick={() => { setupPerson(obj) }}>
-                          <div class="badge bg-success float-right">5</div>
                           <div class="d-flex align-items-start">
                             <img src={obj?.dpimage ? obj?.dpimage : "/images/146-1468295_business-man-profile-icon-business-profile-icon-png.png"} class="rounded-circle mr-1" alt="Vanessa Tucker" width="40" height="40" />
                             <div class="flex-grow-1 ml-3">
                               {obj?.firstName}
-                              <div class="small"><span class="fas fa-circle chat-online"></span> Online</div>
+                              <div class="small"><span class=" chat-online"></span> </div>
                             </div>
                           </div>
                         </a>
@@ -239,4 +253,4 @@ function ChatUser() {
   )
 }
 
-export default ChatUser
+export default chatUser
