@@ -72,24 +72,27 @@ function chatUser() {
     
     console.log(token);
     axios.post(`${UURL}message`, { from: self._id, to: person._id, message: inputMessage }, { headers });
+
     setChatNow(chatNow.concat(messages))
     setInputMessage('')
 
   }
  
-  
   useEffect(() => {
    
       let token  = localStorage.getItem('usertoken');
       const headers = { Authorization: `Bearer ${token}` };
-        console.log(token);
-      axios.post(`${UURL}tekeMessagePeople`, { headers },{ toId: searchParams.get('userId') } ).then(res => {
+        
+      axios.post(`${UURL}tekeMessagePeople`, { headers  },{ toId: searchParams.get('userId') } ).then(res => {
+       
         axios.post(`${UURL}takeUsersForChat`,{ headers }, { people: res?.data?.MessagedPeople } ).then(res => {
           setPeople(res?.data)
         })
         setSelf(res?.data);
+        
 
       })
+  
 
   }, [])
   useEffect(() => {
