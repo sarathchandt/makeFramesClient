@@ -25,6 +25,7 @@ function ChatFromUser() {
     
     useEffect(() => {
         socket.current = io.connect("https://makeframes.herewego.shop")
+        // socket.current = io.connect("http://localhost:3033")
         if (self?._id) {
           socket.current.emit("addUser", self._id);
         }
