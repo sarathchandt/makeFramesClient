@@ -30,7 +30,7 @@ function chatUser() {
 
 
   const messageRef = useRef();
-  let socket = io.connect("http://makeframes.herewego.shop/")
+  let socket = io.connect("https://makeframes.herewego.shop/")
   
   useEffect(() => {
 
