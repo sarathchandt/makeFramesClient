@@ -43,7 +43,6 @@ function  AddProgramform() {
         const headers = { Authorization: `Bearer ${token}` };
 
         axios.get(`${UURL}takeDescription`,{headers}).then(res=>{
-            console.log(res);
             setRules(res.data[0])
         })
     },[])

@@ -24,7 +24,7 @@ function chatFromUser() {
       }, [inputMessage])
     
     useEffect(() => {
-        socket.current = io.connect("https://makeframes.herewego.shop")
+        socket.current = io.connect("http://localhost:3033")
         if (self?._id) {
           socket.current.emit("addUser", self._id);
         }
@@ -35,7 +35,6 @@ function chatFromUser() {
       const headers = { Authorization: `Bearer ${token}` };
 
         axios.get(`${UURL}takePeopleForMessage`,{headers}).then(res=>{
-            console.log(res);
             setChatUsers(res?.data?.messageArray)
             setSelf(res.data.self)
         })

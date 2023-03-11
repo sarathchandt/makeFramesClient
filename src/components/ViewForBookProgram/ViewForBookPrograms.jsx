@@ -34,7 +34,6 @@ function ViewForBookPrograms() {
       </div>
     })
 
-  console.log(allPosts.programs.data);
   useEffect(() => {
     dispatch(fetchAllProgramForBooking())
   }, [])

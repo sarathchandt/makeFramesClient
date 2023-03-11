@@ -14,7 +14,6 @@ function AdminPrivateRoutes() {
       dispatch(checkTocken())
      
           },[])
-          console.log(token,"looo");
 
   return (<>
     {token?.token?.data?.token ? <Outlet/> : <Login/> }

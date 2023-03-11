@@ -50,14 +50,12 @@ function ViewOneBook() {
 
     function checkValid(date){
         let flag=true;
-        console.log(events[1].start);
         
 
         for(let i=0; i< events.length;i++){
             let year= events[i].start.getFullYear()
             let month = events[i].start.getMonth()+1
             let day = events[i].start.getDate()
-            console.log( Date.now(`${year}-${month}-${day}`)==Date.now(date));
 
 
           if(new Date(date)== new Date(`${year}-${month}-${day}`)){
@@ -199,7 +197,6 @@ function ViewOneBook() {
             fetchedPg.loading ? setEvent([]) : null;
         })
     }, [fetchedPg.loading])
-    console.log(fetchedPg,"pg");
     
     useEffect(() => {
         dispatch(fetchOneProgram(searchParams.get('id')))

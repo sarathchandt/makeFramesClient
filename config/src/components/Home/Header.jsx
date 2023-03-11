@@ -83,7 +83,6 @@ function Header() {
     localStorage.removeItem('usertoken');
   }
   
-  console.log(category);
 
   const navigate = useNavigate();
   return (

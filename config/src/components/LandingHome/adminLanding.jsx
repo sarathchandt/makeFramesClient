@@ -64,7 +64,6 @@ function adminLanding() {
 
 
     },[])
-    console.log(details);
    
 
     useEffect(()=>{

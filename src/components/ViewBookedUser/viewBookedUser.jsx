@@ -19,9 +19,7 @@ function ViewBookedUser() {
 
   
 
-    useEffect(()=>{
-        console.log(new Date());
-    },[new Date()])
+
     
 
 

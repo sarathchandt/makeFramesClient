@@ -69,34 +69,34 @@ function chatUser() {
     });
     let token  = localStorage.getItem('usertoken');
     const headers = { Authorization: `Bearer ${token}` };
-
+    
+    console.log(token);
     axios.post(`${UURL}message`, { from: self._id, to: person._id, message: inputMessage }, { headers });
     setChatNow(chatNow.concat(messages))
     setInputMessage('')
 
   }
-
+ 
+  
   useEffect(() => {
-    if (unique) {
-      setUnique(false)
+   
       let token  = localStorage.getItem('usertoken');
       const headers = { Authorization: `Bearer ${token}` };
-
+        console.log(token);
       axios.post(`${UURL}tekeMessagePeople`, { headers },{ toId: searchParams.get('userId') } ).then(res => {
-        axios.post(`${UURL}takeUsersForChat`,{ headers }, { people: res.data.MessagedPeople } ).then(res => {
+        axios.post(`${UURL}takeUsersForChat`,{ headers }, { people: res?.data?.MessagedPeople } ).then(res => {
           setPeople(res?.data)
         })
         setSelf(res?.data);
 
       })
-    }
+
   }, [])
   useEffect(() => {
 
     if (socket.current) {
       socket.current.on("receive", (data) => {
        axios.get(`${UURL}bringDp`, { withCredentials: true }).then(res=>{
-            console.log(res.data._id, "ll", data.from);
             if (res.data._id != data.from) {
               setSocketMessages({ myself: false, message: data.messages });
             }
@@ -109,7 +109,6 @@ function chatUser() {
     socketMessages && setChatNow((pre) => [...pre, socketMessages]);
   }, [socketMessages]);
 
-  console.log(chatNow);
 
   return (
     <div>

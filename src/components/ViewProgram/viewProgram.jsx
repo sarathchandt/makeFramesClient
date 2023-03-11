@@ -39,7 +39,6 @@ function ViewProgram() {
     })
   }, [])
 
-console.log(programs.programs?.data);
 
   return (
 

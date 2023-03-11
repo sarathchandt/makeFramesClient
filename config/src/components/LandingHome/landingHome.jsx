@@ -27,7 +27,6 @@ function LandingHome() {
     localStorage.getItem('usertoken') ?
       dispatch(fetchUserDetails()) : null
   }, [])
-  console.log(category);
   function goToProfile(id) {
     navigate({
       pathname: '/UserPageForProfile',
