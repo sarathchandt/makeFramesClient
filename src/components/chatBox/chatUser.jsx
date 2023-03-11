@@ -33,12 +33,28 @@ function chatUser() {
   // let socket = io.connect("http://localhost:3033")
   
   useEffect(() => {
+   
+    let token  = localStorage.getItem('usertoken');
+    const headers = { Authorization: `Bearer ${token}` };
+    axios.post(`${UURL}tekeMessagePeople`, { toId: searchParams.get('userId') },{ headers} ).then(res => {
+     
+      axios.post(`${UURL}takeUsersForChat`, { people: res?.data?.MessagedPeople }, { headers } ).then(res => {
+        setPeople(res?.data)
+      })
+      setSelf(res?.data);
+      socket.emit("addUser", self?._id);
+
+    })
+
+
+}, [])
+  // useEffect(() => {
     
-    if (self?._id) {
+  //   if (self?._id) {
       
-      socket.emit("addUser", self._id);
-    }
-  }, [self._id])
+     
+  //   }
+  // }, [self._id])
 
 
   useEffect(() => {
@@ -75,7 +91,6 @@ function chatUser() {
     let token  = localStorage.getItem('usertoken');
     const headers = { Authorization: `Bearer ${token}` };
     
-    console.log(token);
     axios.post(`${UURL}message`, { from: self._id, to: person._id, message: inputMessage }, { headers });
 
     setChatNow(chatNow.concat(messages))
@@ -83,22 +98,7 @@ function chatUser() {
 
   }
  
-  useEffect(() => {
-   
-      let token  = localStorage.getItem('usertoken');
-      const headers = { Authorization: `Bearer ${token}` };
-      axios.post(`${UURL}tekeMessagePeople`, { toId: searchParams.get('userId') },{ headers} ).then(res => {
-       
-        axios.post(`${UURL}takeUsersForChat`, { people: res?.data?.MessagedPeople }, { headers } ).then(res => {
-          setPeople(res?.data)
-        })
-        setSelf(res?.data);
-
-
-      })
-  
-
-  }, [])
+ 
   useEffect(() => {
 
     if (socket) {
