@@ -19,7 +19,6 @@ function chatUser() {
   const [searchParams] = useSearchParams()
   const [inputMessage, setInputMessage] = useState('')
   const [uniq, setuniq] = useState(true)
-
   // ......................................
 
   // ......................................
@@ -30,13 +29,13 @@ function chatUser() {
 
 
   const messageRef = useRef();
-  // let socket = io.connect("https://localhost:3033/")
+  let socket = io.connect("https://makeframes.herewego.shop")
+  // let socket = io.connect("http://localhost:3033")
   
   useEffect(() => {
     
     if (self?._id) {
       
-      let socket = io.connect("https://makeframes.herewego.shop")
       socket.emit("addUser", self._id);
     }
   }, [self._id])
