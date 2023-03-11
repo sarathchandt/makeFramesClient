@@ -58,8 +58,8 @@ function ViewForBookPrograms() {
       setCate(res.data)
     })
   }, [])
-  const pageCount = Math.ceil(allPosts?.programs?.data?.length/usersPerPage)
-  const changePage =({selected})=>{
+  const pageCount = Math.ceil(allPosts?.programs?.data?.length / usersPerPage)
+  const changePage = ({ selected }) => {
     setPageNumber(selected)
   }
   return (
@@ -86,9 +86,24 @@ function ViewForBookPrograms() {
             <div className=' col-md-8'>
               <div className="container-fluid">
                 <div className="row ">
-               
 
-                  {allPosts.loading ? <></> : <> { displayUsers } <div className='mt-5  justify-content-center' > <ReactPaginate  
+
+                  {allPosts.loading ? <></> : <> {displayUsers}   </>
+
+                  }
+                </div>
+              </div>
+              
+               
+              
+
+
+
+            </div>
+          </div>
+          <div className='d-md-block d-none col-2'></div>
+          <div className="col-12">
+          <ReactPaginate
                   previousLabel={'Prev'}
                   nextLabel={'Next'}
                   pageCount={pageCount}
@@ -98,15 +113,8 @@ function ViewForBookPrograms() {
                   previousLinkClassName={"prevBttn"}
                   disabledClassName={"paginationDisabled"}
                   activeClassName={'acivateBttn'}
-                  /></div> </>
-                
-                  }
-                   
-                </div>
-              </div>
-            </div>
+                />
           </div>
-          <div className='d-md-block d-none col-2'></div>
         </>
       }
 
