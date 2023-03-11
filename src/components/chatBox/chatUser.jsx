@@ -31,12 +31,12 @@ function chatUser() {
 
   const messageRef = useRef();
   // let socket = io.connect("https://localhost:3033/")
-  let socket = io.connect("https://makeframes.herewego.shop")
   
   useEffect(() => {
-
+    
     if (self?._id) {
-
+      
+      let socket = io.connect("https://makeframes.herewego.shop")
       socket.emit("addUser", self._id);
     }
   }, [self._id])
