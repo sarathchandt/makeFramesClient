@@ -12,7 +12,7 @@ const initialState={
 
 
 export const fetchSingleProgram = createAsyncThunk('singleProgram/fetchSingleProgram',async(id)=>{
-    return await axios.post(`${UURL}takeSingleProgram`,{id:id})//.then(e=>console.log(e))
+    return await axios.post(`${UURL}takeSingleProgram`,{id:id})
 })
 
 const singleProgramSlice=createSlice({

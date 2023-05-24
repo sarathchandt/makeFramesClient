@@ -77,12 +77,10 @@ function Header() {
     })
     axios.post(`${UURL}checkArtist`, { token: token }).then((response) => {
       dispatch(changeState(response.data.isArtist))
-      console.log(response);
 
     })
   }, [])
 
-  console.log(category);
   function logout() {
     localStorage.removeItem('usertoken');
     navigate('/login')

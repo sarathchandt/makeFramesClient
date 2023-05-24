@@ -230,14 +230,12 @@ function SignupForm() {
 
   const sentOtp = () => {
     axios.post(`${UURL}otp`, { email: email }).then((response) => {
-      console.log(response.data);
     })
   }
 
   const signup = (e) => {
 
     e.preventDefault();
-    console.log(UURL);
     axios.post(`${UURL}signup`, details).then(result => {
       if (!result.data.is && result.data.serverOtp) {
         navigate("/")      
@@ -365,7 +363,6 @@ function SignupForm() {
                     if(result.lastName,result.firstName,result.email,result.password,result.rePassword){
                       sentOtp()
                     }else{
-                      console.log('nothing');
                     }
                   })
                 }} >

@@ -14,7 +14,6 @@ function Otp() {
             toast.error('Please enter the otp')
         } else {
             axios.post(`${UURL}verifyOtpForgot`, { otp: otp }).then(res => {
-                console.log(res.data.otp);
                 if (res.data.otp) {
                     navigate({
                         pathname: '/passWord',

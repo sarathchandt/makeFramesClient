@@ -24,7 +24,6 @@ function Pass() {
                   })
 
             }
-            console.log(res.data);
         })
     }
 

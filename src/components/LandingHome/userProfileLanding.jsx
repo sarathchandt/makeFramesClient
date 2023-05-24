@@ -113,7 +113,6 @@ function UserProfileLanding() {
             
         }
     },[loading])
-    console.log(loading);
 
     useEffect(() => {
 
@@ -131,7 +130,6 @@ function UserProfileLanding() {
             setShowPost(res.data)
         })
     }, [])
-    console.log(profileDetails, "profile");
 
   
 

@@ -37,7 +37,6 @@ function SearchPeopleByDomain() {
     useEffect(() => {
         dispatch(fetchUsersBySearch(searchParams.get('domain')))
     }, [])
-    console.log(profiles.profiles.data);
     function goToProfile(id) {
         navigate({
             pathname: '/UserPageForProfile',

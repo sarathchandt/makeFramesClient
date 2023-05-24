@@ -29,8 +29,8 @@ function chatUser() {
 
 
   const messageRef = useRef();
-  let socket = io.connect("https://makeframes.herewego.shop")
-  // let socket = io.connect("http://localhost:3033")
+  // let socket = io.connect("https://makeframes.herewego.shop")
+  let socket = io.connect("http://localhost:3033")
   
   useEffect(() => {
    
@@ -106,7 +106,6 @@ function chatUser() {
       const headers = { Authorization: `Bearer ${token}` };
       socket.on("receive", (data) => {
        axios.post(`${UURL}bringDp`, { token:token }).then(res=>{
-        console.log(self);
         
             if (res.data._id != data.from &&  data?.to == res.data._id) {
               setSocketMessages({ myself: false, message: data.messages });

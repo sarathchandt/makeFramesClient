@@ -28,7 +28,6 @@ function AdminDescription() {
             setDescriptionList(res?.data)
         })
     }, [])
-    console.log(descriptionList);
 
 
     return (<>

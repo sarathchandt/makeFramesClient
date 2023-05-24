@@ -16,7 +16,6 @@ function LoginPage() {
         function login(){
             axios.post(`${UARL}loginAdmin`,{password:password,adminId:adminId}).then(res=>{
                 
-                console.log(res.data);
                 if(res.data.admin){
                     localStorage.setItem('adminToken', res.data.token);
                     navigate('/admin')
